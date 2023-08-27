@@ -4,6 +4,7 @@
 
         $users = require_once('./routes/users.php');
         $updates = require_once('./routes/updates.php');
+        $products  = require_once('./routes/products.php');
 
         if($_SERVER['REQUEST_METHOD'] === 'GET'){
             $users.getUsers();
@@ -16,6 +17,10 @@
 
             if(isset($requestData['getUpdates']) && $requestData['getUpdates'] != false){
                 $updates.getUpdates();
+            }
+
+            if(isset($requestData['getProducts']) && $requestData['getProducts'] != false){
+                $products.getProducts();
             }
 
         }
