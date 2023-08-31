@@ -10,7 +10,7 @@
             $users.getUsers();
         }
 
-        if($_SERVER['REQUEST_METHOD']=== 'POST'){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
             
             $requestData = json_decode(file_get_contents('php://input'), true);
 
@@ -31,6 +31,7 @@
                 ];
                 $updates.postUpdate($newUpdate);
             }
+            
             if(isset($requestData['editUpdate']) && $requestData['editUpdate'] != false){
                 $editUpdate = [
                     'name' => $requestData['name'],

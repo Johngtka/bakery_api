@@ -11,19 +11,19 @@ function getUpdates(){
 function postUpdate($newUpdate){
     global $db;
     $query = $db -> prepare("INSERT INTO aktualizacje VALUES(NULL,:name, :date, :desc)");
-    $query -> bindValue(":name", $newUpdate['name']);
-    $query -> bindValue(":date", $newUpdate['date']);
-    $query -> bindValue(":desc", $newUpdate['desc']);
+    $query -> bindValue(":name", $newUpdate['name'], PDO::PARAM_STR);
+    $query -> bindValue(":date", $newUpdate['date'], PDO::PARAM_STR);
+    $query -> bindValue(":desc", $newUpdate['desc'], PDO::PARAM_STR);
     $query -> execute();
 }
 
 function editUpdate($editedLog){
     global $db;
     $query = $db -> prepare("UPDATE aktualizacje SET Nazwa = :name, Data = :date, Opis = :desc WHERE id = :updateID");
-    $query -> bindValue(":name", $editedLog['name']);
-    $query -> bindValue(":date", $editedLog['date']);
-    $query -> bindValue(":desc", $editedLog['desc']);
-    $query -> bindValue(":updateID", $editedLog['id']);
+    $query -> bindValue(":name", $editedLog['name'], PDO::PARAM_STR);
+    $query -> bindValue(":date", $editedLog['date'], PDO::PARAM_STR);
+    $query -> bindValue(":desc", $editedLog['desc'], PDO::PARAM_STR);
+    $query -> bindValue(":updateID", $editedLog['id'], PDO::PARAM_INT);
     $query -> execute();
 }
 
