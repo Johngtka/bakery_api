@@ -23,6 +23,24 @@
                 $products.getProducts();
             }
 
+            if(isset($requestData['postUpdate']) && $requestData['postUpdate'] != false){
+                $newUpdate = [
+                    'name' => $requestData['name'],
+                    'date' => $requestData['date'],
+                    'desc' => $requestData['desc']
+                ];
+                $updates.postUpdate($newUpdate);
+            }
+            if(isset($requestData['editUpdate']) && $requestData['editUpdate'] != false){
+                $editUpdate = [
+                    'name' => $requestData['name'],
+                    'date' => $requestData['date'],
+                    'desc' => $requestData['desc'],
+                    'id' => $requestData['id']
+                ];
+                $updates.editUpdate($editUpdate);
+            }
+
         }
     
     }
