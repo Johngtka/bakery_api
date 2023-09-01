@@ -18,11 +18,7 @@
             if(isset($requestData['getUpdates']) && $requestData['getUpdates'] != false){
                 $updates.getUpdates();
             }
-
-            if(isset($requestData['getProducts']) && $requestData['getProducts'] != false){
-                $products.getProducts();
-            }
-
+            
             if(isset($requestData['postUpdate']) && $requestData['postUpdate'] != false){
                 $newUpdate = [
                     'name' => $requestData['name'],
@@ -42,6 +38,20 @@
                 $updates.editUpdate($editUpdate);
             }
 
+            if(isset($requestData['getProducts']) && $requestData['getProducts'] != false){
+                $products.getProducts();
+            }
+
+            if(isset($requestData['postProduct']) && $requestData['postProduct']){
+                $newProduct = [
+                    'name' => $requestData['name'],
+                    'price' => $requestData['price'],
+                    'mass' => $requestData['weight'],
+                    'elements' => $requestData['components'],
+                    'description' => $requestData['description']   
+                ];
+                $products.postProduct($newProduct);
+            }
         }
     
     }
