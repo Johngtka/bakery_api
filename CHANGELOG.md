@@ -1,5 +1,12 @@
 ### CHANGELOG
 
+### [0.0.2](https://github.com/Johngtka/bakery_api/compare/v0.0.1...v0.0.2) (2023-09-01)
+
+### Features
+
+-   new methods for products ([#5](https://github.com/Johngtka/bakery_api/pull/5))
+-   new edit and add methods in updates module ([#4](https://github.com/Johngtka/bakery_api/pull/4))
+
 ### 0.0.1 (2023-08-27)
 
 ### Features
