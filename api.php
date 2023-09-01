@@ -18,11 +18,7 @@
             if(isset($requestData['getUpdates']) && $requestData['getUpdates'] != false){
                 $updates.getUpdates();
             }
-
-            if(isset($requestData['getProducts']) && $requestData['getProducts'] != false){
-                $products.getProducts();
-            }
-
+            
             if(isset($requestData['postUpdate']) && $requestData['postUpdate'] != false){
                 $newUpdate = [
                     'name' => $requestData['name'],
@@ -42,6 +38,39 @@
                 $updates.editUpdate($editUpdate);
             }
 
+            if(isset($requestData['getProducts']) && $requestData['getProducts'] != false){
+                $products.getProducts();
+            }
+
+            if(isset($requestData['postProduct']) && $requestData['postProduct'] != false){
+                $newProduct = [
+                    'name' => $requestData['name'],
+                    'price' => $requestData['price'],
+                    'mass' => $requestData['weight'],
+                    'elements' => $requestData['components'],
+                    'description' => $requestData['description']   
+                ];
+                $products.postProduct($newProduct);
+            }
+
+            if(isset($requestData['editProduct']) && $requestData['editProduct'] != false){
+                $editedProduct = [
+                    'name' => $requestData['name'],
+                    'price' => $requestData['price'],
+                    'mass' => $requestData['weight'],
+                    'elements' => $requestData['components'],
+                    'description' => $requestData['description'],   
+                    'id' => $requestData['id']   
+                ];
+                $products.editProduct($editedProduct);
+            }
+            
+            if(isset($requestData['deleteProduct']) && $requestData['deleteProduct'] != false){
+                $deletedProduct = [
+                    'id' => $requestData['id']   
+                ];
+                $products.deleteProduct($deletedProduct);
+            }
         }
     
     }
