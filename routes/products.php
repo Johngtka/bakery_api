@@ -17,6 +17,8 @@
         $query -> bindValue(":components", $newProduct['elements'], PDO::PARAM_STR);
         $query -> bindValue(":description", $newProduct['description'], PDO::PARAM_STR);
         $query -> execute();
+        $result = $query -> fetchAll();
+        echo json_encode($result);
     }
 
     function editProduct($editedProduct){
@@ -29,6 +31,8 @@
         $query -> bindValue(":description", $editedProduct['description'], PDO::PARAM_STR);
         $query -> bindValue(":productID", $editedProduct['id'], PDO::PARAM_INT);
         $query -> execute();
+        $result = $query -> fetchAll();
+        echo json_encode($result);
     }
 
     function deleteProduct($productID){
@@ -39,6 +43,8 @@
         $dropIdColumn = $db -> prepare("ALTER TABLE produkty DROP id");
         $dropIdColumn -> execute();
         $addIdColumn = $db -> prepare("ALTER TABLE produkty ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
-        $addIdColumn -> execute();        
+        $addIdColumn -> execute(); 
+        $result = $query -> fetchAll();
+        echo json_encode($result);       
     }
 ?>

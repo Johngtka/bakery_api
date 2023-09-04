@@ -15,6 +15,8 @@ function postUpdate($newUpdate){
     $query -> bindValue(":date", $newUpdate['date'], PDO::PARAM_STR);
     $query -> bindValue(":desc", $newUpdate['desc'], PDO::PARAM_STR);
     $query -> execute();
+    $result = $query->fetchAll();
+    echo json_encode($result);
 }
 
 function editUpdate($editedLog){
@@ -25,6 +27,8 @@ function editUpdate($editedLog){
     $query -> bindValue(":desc", $editedLog['desc'], PDO::PARAM_STR);
     $query -> bindValue(":updateID", $editedLog['id'], PDO::PARAM_INT);
     $query -> execute();
+    $result = $query->fetchAll();
+    echo json_encode($result);
 }
 
 ?>
