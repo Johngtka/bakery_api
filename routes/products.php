@@ -23,7 +23,7 @@
 
     function editProduct($editedProduct){
         global $db;
-        $query = $db -> prepare("UPDATE produkty SET Nazwa = :name, Cena = :cost, Masa = :weight, Skladniki = :components, Opis = :description WHERE id = :productID");
+        $query = $db -> prepare("UPDATE produkty SET name = :name, price = :cost, weight = :weight, components = :components, description = :description WHERE id = :productID");
         $query -> bindValue(":name", $editedProduct['name'], PDO::PARAM_STR);
         $query -> bindValue(":cost", $editedProduct['price']);
         $query -> bindValue(":weight", $editedProduct['mass'], PDO::PARAM_INT);
