@@ -77,5 +77,22 @@ function API()
         if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
             $sales . getSales();
         }
+
+        if (isset($requestData['postSale']) && $requestData['postSale'] != false) {
+            $newSale = [
+                'name' => $requestData['name'],
+                'sDate' => $requestData['sDate'],
+                'eDate' => $requestData['eDate'],
+                'val' => $requestData['value']
+            ];
+            $sales . postSales($newSale);
+        }
+
+        if (isset($requestData['deleteSale']) && $requestData['deleteSale'] != false) {
+            $deletedSale = [
+                'id' => $requestData['id']
+            ];
+            $sales . deleteSales($deletedSale);
+        }
     }
 }
