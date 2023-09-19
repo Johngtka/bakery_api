@@ -25,7 +25,7 @@ function postSales($newSale)
 function deleteSales($saleID)
 {
     global $db;
-    $query = $db->prepare("DELETE * FROM promocje WHERE id = :saleId");
+    $query = $db->prepare("DELETE FROM promocje WHERE id = :saleId");
     $query->bindValue(':saleId', $saleID['id'], PDO::PARAM_INT);
     $query->execute();
     $dropIdColumn = $db->prepare("ALTER TABLE promocje DROP id");
