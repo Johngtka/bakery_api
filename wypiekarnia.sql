@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 19, 2023 at 09:07 AM
+-- Generation Time: Wrz 21, 2023 at 08:11 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -153,11 +153,12 @@ CREATE TABLE `promocje` (
 --
 
 INSERT INTO `promocje` (`id`, `ProductName`, `StartDate`, `EndDate`, `Value`) VALUES
-(1, 'Tort Urodzinowy', '2023-09-19', '2023-09-21', '20'),
-(2, 'Tort Ślubny', '2023-09-19', '2023-09-21', '30'),
-(3, 'Ciasto Drożdżowe', '2023-09-19', '2023-09-21', '10'),
-(4, 'Ciasto Browne', '2023-09-19', '2023-09-21', '25'),
-(5, 'Babeczka Sezonowa', '2023-09-19', '2023-09-21', '100');
+(1, 'Tort Urodzinowy', '2023-09-18', '2023-09-24', '20'),
+(2, 'Tort Ślubny', '2023-09-25', '2023-10-01', '30'),
+(3, 'Ciasto Drożdżowe', '2023-10-02', '2023-10-08', '10'),
+(4, 'Ciasto Browne', '2023-10-09', '2023-10-15', '25'),
+(5, 'Babeczka Sezonowa', '2023-10-16', '2023-10-22', '100'),
+(6, 'Tort dla Smakoszy', '2023-10-23', '', '40');
 
 -- --------------------------------------------------------
 
@@ -256,7 +257,7 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT for table `promocje`
 --
 ALTER TABLE `promocje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `relacje`
