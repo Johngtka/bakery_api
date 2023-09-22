@@ -8,6 +8,9 @@
 
 -   new sales gates and methods in sales endpoint
     ([#8](https://github.com/Johngtka/bakery_api/pull/8))
+
+### Fixes
+
 -   fixed products for upcoming functionality
     ([#7](https://github.com/Johngtka/bakery_api/pull/7))
 -   repaired the methods in products and updates modules
