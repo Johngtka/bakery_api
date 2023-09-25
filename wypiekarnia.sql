@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 23, 2023 at 09:38 AM
+-- Generation Time: Wrz 25, 2023 at 11:53 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -57,7 +57,7 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 (16, 'Ostatnie Poprawki', '2022-11-05', 'W tej aktualizacji dodaliśmy podstawową funkcjonalność koszyka mianowicie wyświetlenie zamówionych produktów.</br> Dodatkowo zmieniliśmy logo naszej aplikacji </br> Pozdrawiamy Twórcy :-)'),
 (17, 'System zamówień ukończony', '2022-12-19', 'W tej aktualizacji dodaliśmy możliwość ręcznego aktywowania zamówień przez użytkownika,</br> w celu lepszej automatyzacji pracy naszego sklepu.</br> Naprawiliśmy też kilka błędów związanych z koszykiem'),
 (18, 'Następny Update', '2023-01-05', 'W tej aktualizacji przebudowywujemy naszą aplikację, a właściwie silnik łączący się z bazą danych,</br> na silnik oparty o bibliotekę PDO która usprawni pracę nad serwisem.'),
-(19, 'Chwila na oddech', '2023-01-09', 'W tej aktualizacji chwilowo wstrzymujemy pracę nad naszą aplikacją<br> dopóki nie naprawimy jednego błędu związanego z koszykiem.</br> Oraz chcieliśmy poinformować o tym że zaistniała pierwsza opcja kontaktu z nami w zakładce kontakt.</br> Pozdrawiamy Twórcy  :-)'),
+(19, 'Chwila na oddech', '2023-01-09', 'W tej aktualizacji chwilowo wstrzymujemy pracę nad naszą aplikacją</br> dopóki nie naprawimy jednego błędu związanego z koszykiem.</br> Oraz chcieliśmy poinformować o tym że zaistniała pierwsza opcja kontaktu z nami w zakładce kontakt.</br> Pozdrawiamy Twórcy  :-)'),
 (20, 'Remoncik', '2023-01-19', 'W tej aktualizacji naprawiliśmy dogłębnie błędy, które się ostatnio pojawiły,</br> oraz naprawiliśmy też powtarzające się elementy arkuszy stylów css.</br> Pozdrawiamy Twórcy ;-)'),
 (21, 'Zmiany', '2023-02-19', 'W tej aktualizacji poddaliśmy formatowaniu pliki z podsumowaniem zamówień \"Nowe Funkcje\",</br> oraz wyłączyliśmy \"tymczasowo\" dostęp do koszyka w ramach jego napraw.</br> Pozdrawiamy Twórcy :-)'),
 (22, 'Proces Naprawczy', '2023-03-20', 'W tej Aktualizacji naprawiliśmy szczególne błędy znajdujące się w kodzie naszej aplikacji.</br>Dodatkowo zoptymalizowaliśmy całą aplikację aby jej kod był bardziej dla nas czytelny.</br>Pozdrawiamy Twórcy :-)'),
@@ -87,7 +87,7 @@ CREATE TABLE `klijeci` (
 --
 
 INSERT INTO `klijeci` (`id`, `imie`, `nazwisko`, `mail`, `telefon`, `logi`, `haslo`) VALUES
-(1, 'Janusz', 'Kowalski', 'jkowalski@wp.pl', '12121212', 'jkowalski56', 'qwerty');
+(1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty');
 
 -- --------------------------------------------------------
 
@@ -192,6 +192,19 @@ CREATE TABLE `zamowienia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `zamowienia`
+--
+
+INSERT INTO `zamowienia` (`id`, `nazwa_produkt`, `ilosc`, `dat`, `godzina`, `mail`, `telefon`, `kom`) VALUES
+(1, 'Tort dla Smakoszy', 1, '2023-09-30', '12:30:00', 'jkowalski@gmail.com', 123123123, 'test'),
+(2, 'Ciasto Sernik', 1, '2023-09-30', '13:30:00', 'jkowalski@gmail.com', 123123123, 'test1'),
+(3, 'Tarty Malinowa', 3, '2023-09-30', '14:30:00', 'jkowalski@gmail.com', 123123123, 'test3'),
+(4, 'Babeczki Czekoladowa Czarna', 4, '2023-09-30', '15:30:00', 'jkowalski@gmail.com', 123123123, 'test4'),
+(5, 'Ciasteczka Cantuccini', 5, '2023-09-30', '16:30:00', 'jkowalski@gmail.com', 123123123, 'test5'),
+(6, 'Bułeczek Kajzerka', 6, '2023-09-30', '17:30:00', 'jkowalski@gmail.com', 123123123, 'test6'),
+(7, 'Bułeczek Przenna', 7, '2023-09-30', '18:30:00', 'jkowalski@gmail.com', 123123123, 'test7');
+
+--
 -- Indeksy dla zrzutów tabel
 --
 
@@ -269,7 +282,7 @@ ALTER TABLE `relacje`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
