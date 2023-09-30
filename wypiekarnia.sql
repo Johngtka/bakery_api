@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 30, 2023 at 08:55 AM
+-- Generation Time: Wrz 30, 2023 at 09:52 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -158,7 +158,8 @@ INSERT INTO `promocje` (`id`, `ProductName`, `StartDate`, `EndDate`, `Value`) VA
 (2, 'Ciasto Drożdżowe', '2023-10-02', '2023-10-08', '10'),
 (3, 'Ciasto Browne', '2023-10-09', '2023-10-15', '25'),
 (4, 'Babeczka Sezonowa', '2023-10-16', '2023-10-22', '100'),
-(5, 'Tort dla Smakoszy', '2023-10-23', '2023-10-30', '40');
+(5, 'Tort dla Smakoszy', '2023-10-23', '2023-10-30', '40'),
+(6, 'Babeczka Sezonowa', '2023-09-30', '2023-10-15', '35');
 
 -- --------------------------------------------------------
 
@@ -270,7 +271,7 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT for table `promocje`
 --
 ALTER TABLE `promocje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `relacje`
