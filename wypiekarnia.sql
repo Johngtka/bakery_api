@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Wrz 30, 2023 at 09:52 AM
+-- Generation Time: Paź 01, 2023 at 06:22 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -75,19 +75,19 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 
 CREATE TABLE `klijeci` (
   `id` int(11) NOT NULL,
-  `imie` text NOT NULL,
-  `nazwisko` text NOT NULL,
-  `mail` text NOT NULL,
-  `telefon` text NOT NULL,
-  `logi` text NOT NULL,
-  `haslo` text NOT NULL
+  `name` text NOT NULL,
+  `surName` text NOT NULL,
+  `email` text NOT NULL,
+  `phone` text NOT NULL,
+  `login` text NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
 -- Dumping data for table `klijeci`
 --
 
-INSERT INTO `klijeci` (`id`, `imie`, `nazwisko`, `mail`, `telefon`, `logi`, `haslo`) VALUES
+INSERT INTO `klijeci` (`id`, `name`, `surName`, `email`, `phone`, `login`, `password`) VALUES
 (1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty');
 
 -- --------------------------------------------------------
@@ -183,20 +183,20 @@ CREATE TABLE `relacje` (
 
 CREATE TABLE `zamowienia` (
   `id` int(11) NOT NULL,
-  `nazwa_produkt` text NOT NULL,
-  `ilosc` int(11) NOT NULL,
-  `dat` date NOT NULL,
-  `godzina` time NOT NULL,
-  `mail` text NOT NULL,
-  `telefon` int(11) NOT NULL,
-  `kom` text NOT NULL
+  `prodName` text NOT NULL,
+  `count` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `email` text NOT NULL,
+  `phone` int(11) NOT NULL,
+  `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `zamowienia`
 --
 
-INSERT INTO `zamowienia` (`id`, `nazwa_produkt`, `ilosc`, `dat`, `godzina`, `mail`, `telefon`, `kom`) VALUES
+INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `date`, `time`, `email`, `phone`, `comment`) VALUES
 (1, 'Tort dla Smakoszy', 1, '2023-09-30', '12:30:00', 'jkowalski@gmail.com', 123123123, 'test'),
 (2, 'Ciasto Sernik', 1, '2023-09-30', '13:30:00', 'jkowalski@gmail.com', 123123123, 'test1'),
 (3, 'Tarty Malinowa', 3, '2023-09-30', '14:30:00', 'jkowalski@gmail.com', 123123123, 'test3'),
