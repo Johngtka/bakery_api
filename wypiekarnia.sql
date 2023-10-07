@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 01, 2023 at 06:22 PM
+-- Generation Time: Paź 07, 2023 at 09:14 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -88,7 +88,8 @@ CREATE TABLE `klijeci` (
 --
 
 INSERT INTO `klijeci` (`id`, `name`, `surName`, `email`, `phone`, `login`, `password`) VALUES
-(1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty');
+(1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty'),
+(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '577500117', 'admin', 'admin#2137');
 
 -- --------------------------------------------------------
 
@@ -259,7 +260,7 @@ ALTER TABLE `aktualizacje`
 -- AUTO_INCREMENT for table `klijeci`
 --
 ALTER TABLE `klijeci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `produkty`
