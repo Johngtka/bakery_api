@@ -6,7 +6,21 @@ function getSales()
     $query = $db->prepare("SELECT * FROM promocje");
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function postSales($newSale)
@@ -19,7 +33,21 @@ function postSales($newSale)
     $query->bindValue(':value', $newSale['val'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function deleteSales($saleID)
@@ -33,5 +61,19 @@ function deleteSales($saleID)
     $addIdColumn = $db->prepare("ALTER TABLE promocje ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
     $addIdColumn->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }

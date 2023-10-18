@@ -6,7 +6,21 @@ function getUsers()
     $query = $db->prepare("SELECT * FROM klijeci");
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function getUsersOrders($userEmail)
@@ -16,5 +30,19 @@ function getUsersOrders($userEmail)
     $query->bindValue(':email', $userEmail, PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }

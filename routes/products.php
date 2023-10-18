@@ -6,7 +6,21 @@ function getProducts()
     $query = $db->prepare("SELECT * FROM produkty");
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function postProduct($newProduct)
@@ -20,7 +34,21 @@ function postProduct($newProduct)
     $query->bindValue(":description", $newProduct['description'], PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function editProduct($editedProduct)
@@ -35,7 +63,21 @@ function editProduct($editedProduct)
     $query->bindValue(":productID", $editedProduct['id'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function deleteProduct($productID)
@@ -49,5 +91,19 @@ function deleteProduct($productID)
     $addIdColumn = $db->prepare("ALTER TABLE produkty ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
     $addIdColumn->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    $filteredResult = [];
+
+    foreach ($result as $row) {
+        $filteredRow = [];
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
