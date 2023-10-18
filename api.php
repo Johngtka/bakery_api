@@ -7,6 +7,7 @@ function API()
     $updates = require_once('./routes/updates.php');
     $products  = require_once('./routes/products.php');
     $sales = require_once('./routes/sales.php');
+    $company = require_once('./routes/company.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $users . getUsers();
@@ -97,6 +98,10 @@ function API()
                 'id' => $requestData['id']
             ];
             $sales . deleteSales($deletedSale);
+        }
+
+        if (isset($requestData['getCompany']) && $requestData['getCompany'] !== false) {
+            $company . getCompany();
         }
     }
 }
