@@ -24,7 +24,7 @@ function getUsers()
 function getUsersOrders($userEmail)
 {
     global $db;
-    $query = $db->prepare("SELECT * FROM zamowienia WHERE email=:email");
+    $query = $db->prepare("SELECT * FROM zamowienia WHERE email=:email ORDER BY id DESC");
     $query->bindValue(':email', $userEmail, PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
