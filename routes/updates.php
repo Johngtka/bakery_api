@@ -7,8 +7,6 @@ function getUpdates()
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
         $filteredRow = [];
         foreach ($row as $key => $value) {
@@ -33,10 +31,7 @@ function postUpdate($newUpdate)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -60,10 +55,7 @@ function editUpdate($editedLog)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;

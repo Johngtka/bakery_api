@@ -7,10 +7,7 @@ function getProducts()
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -35,10 +32,7 @@ function postProduct($newProduct)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -64,10 +58,7 @@ function editProduct($editedProduct)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -83,19 +74,19 @@ function editProduct($editedProduct)
 function deleteProduct($productID)
 {
     global $db;
+
     $query = $db->prepare("DELETE FROM produkty WHERE id = :productID");
     $query->bindValue(":productID", $productID['id'], PDO::PARAM_INT);
     $query->execute();
+
     $dropIdColumn = $db->prepare("ALTER TABLE produkty DROP id");
     $dropIdColumn->execute();
+
     $addIdColumn = $db->prepare("ALTER TABLE produkty ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
     $addIdColumn->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;

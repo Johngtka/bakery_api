@@ -7,10 +7,8 @@ function getUsers()
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
+
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -31,10 +29,7 @@ function getUsersOrders($userEmail)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;

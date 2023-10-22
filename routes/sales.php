@@ -7,10 +7,7 @@ function getSales()
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -34,10 +31,7 @@ function postSales($newSale)
     $query->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -62,10 +56,7 @@ function deleteSales($saleID)
     $addIdColumn->execute();
     $result = $query->fetchAll();
 
-    $filteredResult = [];
-
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
