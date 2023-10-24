@@ -2,6 +2,14 @@
 
 ### CHANGELOG
 
+### [0.0.4] (2023-10-24)
+
+### Features
+
+-   Removing numbers from returned data
+    ([#10](https://github.com/Johngtka/bakery_api/pull/10))
+-   Orders method in Users ([#9](https://github.com/Johngtka/bakery_api/pull/9))
+
 ### [0.0.3](https://github.com/Johngtka/bakery_api/compare/v.0.0.2...v.0.0.3) (2023-09-22)
 
 ### Features
