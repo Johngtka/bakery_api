@@ -6,7 +6,18 @@ function getProducts()
     $query = $db->prepare("SELECT * FROM produkty");
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function postProduct($newProduct)
@@ -20,7 +31,18 @@ function postProduct($newProduct)
     $query->bindValue(":description", $newProduct['description'], PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function editProduct($editedProduct)
@@ -35,19 +57,44 @@ function editProduct($editedProduct)
     $query->bindValue(":productID", $editedProduct['id'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
 
 function deleteProduct($productID)
 {
     global $db;
+
     $query = $db->prepare("DELETE FROM produkty WHERE id = :productID");
     $query->bindValue(":productID", $productID['id'], PDO::PARAM_INT);
     $query->execute();
+
     $dropIdColumn = $db->prepare("ALTER TABLE produkty DROP id");
     $dropIdColumn->execute();
+
     $addIdColumn = $db->prepare("ALTER TABLE produkty ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
     $addIdColumn->execute();
     $result = $query->fetchAll();
-    echo json_encode($result);
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
 }
