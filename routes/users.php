@@ -21,23 +21,26 @@ function getUsers()
     echo json_encode($filteredResult);
 }
 
-function getUsersOrders($userEmail)
+function getUsersOrders($userLogin)
 {
     global $db;
-    $query = $db->prepare("SELECT * FROM zamowienia WHERE email=:email ORDER BY id DESC");
-    $query->bindValue(':email', $userEmail, PDO::PARAM_STR);
+    $query = $db->prepare("SELECT * FROM zamowienia WHERE userLogin=:login ORDER BY id DESC");
+    $query->bindValue(':login', $userLogin, PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
 
-    foreach ($result as $row) {
-        foreach ($row as $key => $value) {
-            if (is_numeric($key)) {
-                continue;
+    if (!empty($result)) {
+        foreach ($result as $row) {
+            foreach ($row as $key => $value) {
+                if (is_numeric($key)) {
+                    continue;
+                }
+                $filteredRow[$key] = $value;
             }
-            $filteredRow[$key] = $value;
+            $filteredResult[] = $filteredRow;
         }
-        $filteredResult[] = $filteredRow;
+        echo json_encode($filteredResult);
+    } else {
+        echo json_encode([]);
     }
-
-    echo json_encode($filteredResult);
 }

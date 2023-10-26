@@ -17,8 +17,8 @@ function API()
         $requestData = json_decode(file_get_contents('php://input'), true);
 
         if (isset($requestData['usersOrders']) && $requestData['usersOrders'] != false) {
-            $userEmail = $requestData['email'];
-            $users . getUsersOrders($userEmail);
+            $userLogin = $requestData['login'];
+            $users . getUsersOrders($userLogin);
         }
 
         if (isset($requestData['getUpdates']) && $requestData['getUpdates'] != false) {
