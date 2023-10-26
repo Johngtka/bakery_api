@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 22, 2023 at 11:08 AM
+-- Generation Time: Paź 26, 2023 at 11:31 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -65,7 +65,8 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 (24, 'Ogólne Usprawnienia', '2023-08-11', 'W tej aktualizacji naprawiłem składnię kodu naszego sklepu i przekształciłem delikatnie </br> kody skryptów JS na bardziej optymalne dla czytania. </br> Dostosowałem też skalowalność w pionie mojego serwisu, przypominam o możliwości </br> proponowania zmian i kontaktu ze mną w zakładce kontakt. </br> Pozdrawiam Twórca :-)'),
 (25, 'Zmiana Zabezpieczeń', '2023-08-14', 'W tej aktualizacji naprawiłem zabezpieczenia funkcji mojego sklepu oraz silnik wyświetlający </br> login zalogowanego użytkownika w menu, jeśli użytkownik nie jest zalogowany </br> to wyświetli się napis \'Zaloguj się\'. </br> Zastosowano również lepszą czytelność kodu oraz dodano walidację </br> numeru telefonu, wszędzie tam gdzie to jest możliwe. </br> Pozdrawiam Twórca :-)'),
 (26, 'Nowe Zarządzanie', '2023-09-05', 'Ta aktualizacja obejmuje dodanie zewnętrznej aplikacji do sterowania </br> zdarzeniami wypiekarni np. (Aktualizacje, Produkty, Promocje itd). </br> Zmieniłem też logo mojego sklepu które ma symbolizować połączenie 2 aplikacji w jeden serwis oto one: </br> <img id=\'k\' src=\'logo.png\'/> </br> Przerobiłemy też cały system plików wypiekarni, aby był bardziej zoptymalizowany pod nowe technologie. </br> Pozdrawiam Twórca :-)'),
-(27, 'Nowe Funkcje', '2023-09-29', 'Ta aktualizacja obejmuje dodanie nowego kafelka do profilu użytkownika, który ma </br> wyświetlać aktualne promocje występujące w bazie danych wraz z ich ilością pokazywaną w kafelku. </br> Zmieniłem też wygląd przycisków akcyjnych w każdym formulażu na moim sklepie. </br> Rozdzieliłem silnik tworzenia nowego użytkownika od jego strony powitalnej </br> i od teraz strona powitalna jest osobnym modułem. </br> Zaktualizowałem ikony mojej aplikacji oraz zaimplementowałem je do </br> przycisków oraz innych części sklepu. </br> W końcu po tylu latach dodałem odpowiednią treść do wszystkich stopek w moim sklepie. </br> Z mojej strony to by było na tyle, Pozdrawiam Twórca :-)');
+(27, 'Nowe Funkcje', '2023-09-29', 'Ta aktualizacja obejmuje dodanie nowego kafelka do profilu użytkownika, który ma </br> wyświetlać aktualne promocje występujące w bazie danych wraz z ich ilością pokazywaną w kafelku. </br> Zmieniłem też wygląd przycisków akcyjnych w każdym formulażu na moim sklepie. </br> Rozdzieliłem silnik tworzenia nowego użytkownika od jego strony powitalnej </br> i od teraz strona powitalna jest osobnym modułem. </br> Zaktualizowałem ikony mojej aplikacji oraz zaimplementowałem je do </br> przycisków oraz innych części sklepu. </br> W końcu po tylu latach dodałem odpowiednią treść do wszystkich stopek w moim sklepie. </br> Z mojej strony to by było na tyle, Pozdrawiam Twórca :-)'),
+(28, 'Nowe Podsumowania', '2023-10-26', 'Ta aktualizacja obejmuje zmianę wyglądu oraz sposobu działania systemu zamówień w moim sklepie. </br> Usunąłem wpisywanie e-mail w zamówienie i zastąpiłem go loginem użytkownika. </br> Zmieniłem sposób generowania podsumowań oraz uczyniłem kod mojego sklepu bardziej czytelnym. </br> Pozdrawiam Twórca :-)');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ CREATE TABLE `klijeci` (
 
 INSERT INTO `klijeci` (`id`, `name`, `surName`, `email`, `phone`, `login`, `password`) VALUES
 (1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty'),
-(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '577500117', 'admin', 'admin#2137');
+(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '121211221221', 'admin1111', 'qwerty');
 
 -- --------------------------------------------------------
 
@@ -184,8 +185,8 @@ CREATE TABLE `zamowienia` (
   `count` int(11) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `email` text NOT NULL,
   `phone` int(11) NOT NULL,
+  `userLogin` text NOT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -193,14 +194,16 @@ CREATE TABLE `zamowienia` (
 -- Dumping data for table `zamowienia`
 --
 
-INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `date`, `time`, `email`, `phone`, `comment`) VALUES
-(1, 'Tort dla Smakoszy', 1, '2023-09-30', '12:30:00', 'jkowalski@gmail.com', 123123123, 'test'),
-(2, 'Ciasto Sernik', 1, '2023-09-30', '13:30:00', 'jkowalski@gmail.com', 123123123, 'test1'),
-(3, 'Tarty Malinowa', 3, '2023-09-30', '14:30:00', 'jkowalski@gmail.com', 123123123, 'test3'),
-(4, 'Babeczki Czekoladowa Czarna', 4, '2023-09-30', '15:30:00', 'jkowalski@gmail.com', 123123123, 'test4'),
-(5, 'Ciasteczka Cantuccini', 5, '2023-09-30', '16:30:00', 'jkowalski@gmail.com', 123123123, 'test5'),
-(6, 'Bułeczek Kajzerka', 6, '2023-09-30', '17:30:00', 'jkowalski@gmail.com', 123123123, 'test6'),
-(7, 'Bułeczek Przenna', 7, '2023-09-30', '18:30:00', 'jkowalski@gmail.com', 123123123, 'test7');
+INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `date`, `time`, `phone`, `userLogin`, `comment`) VALUES
+(1, 'Tort dla Smakoszy', 1, '2023-09-30', '12:30:00', 123123123, 'jkowalski56', 'test'),
+(2, 'Ciasto Sernik', 1, '2023-09-30', '13:30:00', 123123123, 'jkowalski56', 'test1'),
+(3, 'Tarty Malinowa', 3, '2023-09-30', '14:30:00', 123123123, 'jkowalski56', 'test3'),
+(4, 'Babeczki Czekoladowa Czarna', 4, '2023-09-30', '15:30:00', 123123123, 'jkowalski56', 'test4'),
+(5, 'Ciasteczka Cantuccini', 5, '2023-09-30', '16:30:00', 123123123, 'jkowalski56', 'test5'),
+(6, 'Bułeczek Kajzerka', 6, '2023-09-30', '17:30:00', 123123123, 'jkowalski56', 'test6'),
+(7, 'Bułeczek Przenna', 7, '2023-09-30', '18:30:00', 123123123, 'jkowalski56', 'test7'),
+(8, 'Tort Urodzinowy', 2, '2023-10-27', '12:02:00', 2121212, 'jkowalski56', 'sdasda'),
+(9, 'Ciasto Browne', 2, '2023-10-29', '12:02:00', 1121212121, 'jkowalski56', 'test');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -250,7 +253,7 @@ ALTER TABLE `zamowienia`
 -- AUTO_INCREMENT for table `aktualizacje`
 --
 ALTER TABLE `aktualizacje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `klijeci`
@@ -280,7 +283,7 @@ ALTER TABLE `relacje`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
