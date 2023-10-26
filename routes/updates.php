@@ -30,18 +30,7 @@ function postUpdate($newUpdate)
     $query->bindValue(":desc", $newUpdate['desc'], PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
-
-    foreach ($result as $row) {
-        foreach ($row as $key => $value) {
-            if (is_numeric($key)) {
-                continue;
-            }
-            $filteredRow[$key] = $value;
-        }
-        $filteredResult[] = $filteredRow;
-    }
-
-    echo json_encode($filteredResult);
+    echo json_encode($result);
 }
 
 function editUpdate($editedLog)
@@ -54,16 +43,5 @@ function editUpdate($editedLog)
     $query->bindValue(":updateID", $editedLog['id'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
-
-    foreach ($result as $row) {
-        foreach ($row as $key => $value) {
-            if (is_numeric($key)) {
-                continue;
-            }
-            $filteredRow[$key] = $value;
-        }
-        $filteredResult[] = $filteredRow;
-    }
-
-    echo json_encode($filteredResult);
+    echo json_encode($result);
 }
