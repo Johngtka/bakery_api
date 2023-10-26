@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 26, 2023 at 11:28 AM
+-- Generation Time: Paź 26, 2023 at 11:31 AM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -90,7 +90,7 @@ CREATE TABLE `klijeci` (
 
 INSERT INTO `klijeci` (`id`, `name`, `surName`, `email`, `phone`, `login`, `password`) VALUES
 (1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty'),
-(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '121211221221', 'admin1111', 'sadasda');
+(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '121211221221', 'admin1111', 'qwerty');
 
 -- --------------------------------------------------------
 
