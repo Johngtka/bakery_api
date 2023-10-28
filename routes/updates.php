@@ -8,7 +8,6 @@ function getUpdates()
     $result = $query->fetchAll();
 
     foreach ($result as $row) {
-        $filteredRow = [];
         foreach ($row as $key => $value) {
             if (is_numeric($key)) {
                 continue;
@@ -17,7 +16,6 @@ function getUpdates()
         }
         $filteredResult[] = $filteredRow;
     }
-
     echo json_encode($filteredResult);
 }
 
