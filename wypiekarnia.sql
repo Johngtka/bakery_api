@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 28, 2023 at 05:29 PM
+-- Generation Time: Paź 30, 2023 at 08:41 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -62,7 +62,7 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 (21, 'Zmiany', '2023-02-19', 'W tej aktualizacji poddałem formatowaniu pliki z podsumowaniem zamówień, </br> oraz wyłączyłem \"tymczasowo\" dostęp do koszyka w ramach jego napraw. </br> Pozdrawiam Twórca :-)'),
 (22, 'Proces Naprawczy', '2023-03-20', 'W tej Aktualizacji naprawiłem szczególne błędy znajdujące się w kodzie mojej aplikacji. </br> Dodatkowo zoptymalizowałem całą aplikację aby jej kod był bardziej czytelny. </br> Pozdrawiam Twórca :-)'),
 (23, 'Nowe Funkcje', '2023-08-05', 'W tej aktualizacji naprawiłem krytyczne błędy w kodzie formulaży zamówień oraz </br> zaktualizowałem ikony serwisu wraz z aktualizacją silnika JQuery. </br> Usunąłem też rozwijane menu i poddałem je elastyzacji. </br> Wprowadziłem też ogólny porządek w kodzie mojego sklepu. </br> Pozdrawiam Twórca :-)'),
-(24, 'Ogólne Usprawnienia', '2023-08-11', 'W tej aktualizacji naprawiłem składnię kodu naszego sklepu i przekształciłem delikatnie </br> kody skryptów JS na bardziej optymalne dla czytania. </br> Dostosowałem też skalowalność w pionie mojego serwisu, przypominam o możliwości </br> proponowania zmian i kontnaktu ze mną w zakładce kontakt. </br> Pozdrawiam Twórca :-)'),
+(24, 'Ogólne Usprawnienia', '2023-08-11', 'W tej aktualizacji naprawiłem składnię kodu naszego sklepu i przekształciłem delikatnie </br> kody skryptów JS na bardziej optymalne dla czytania. </br> Dostosowałem też skalowalność w pionie mojego serwisu, przypominam o możliwości </br> proponowania zmian i kontaktu ze mną w zakładce kontakt. </br> Pozdrawiam Twórca :-)'),
 (25, 'Zmiana Zabezpieczeń', '2023-08-14', 'W tej aktualizacji naprawiłem zabezpieczenia funkcji mojego sklepu oraz silnik wyświetlający </br> login zalogowanego użytkownika w menu, jeśli użytkownik nie jest zalogowany </br> to wyświetli się napis \'Zaloguj się\'. </br> Zastosowano również lepszą czytelność kodu oraz dodano walidację </br> numeru telefonu, wszędzie tam gdzie to jest możliwe. </br> Pozdrawiam Twórca :-)'),
 (26, 'Nowe Zarządzanie', '2023-09-05', 'Ta aktualizacja obejmuje dodanie zewnętrznej aplikacji do sterowania </br> zdarzeniami wypiekarni np. (Aktualizacje, Produkty, Promocje itd). </br> Zmieniłem też logo mojego sklepu które ma symbolizować połączenie 2 aplikacji w jeden serwis oto one: </br> <img id=\'k\' src=\'logo.png\'/> </br> Przerobiłemy też cały system plików wypiekarni, aby był bardziej zoptymalizowany pod nowe technologie. </br> Pozdrawiam Twórca :-)'),
 (27, 'Nowe Funkcje', '2023-09-29', 'Ta aktualizacja obejmuje dodanie nowego kafelka do profilu użytkownika, który ma </br> wyświetlać aktualne promocje występujące w bazie danych wraz z ich ilością pokazywaną w kafelku. </br> Zmieniłem też wygląd przycisków akcyjnych w każdym formulażu na moim sklepie. </br> Rozdzieliłem silnik tworzenia nowego użytkownika od jego strony powitalnej </br> i od teraz strona powitalna jest osobnym modułem. </br> Zaktualizowałem ikony mojej aplikacji oraz zaimplementowałem je do </br> przycisków oraz innych części sklepu. </br> W końcu po tylu latach dodałem odpowiednią treść do wszystkich stopek w moim sklepie. </br> Z mojej strony to by było na tyle, Pozdrawiam Twórca :-)'),
