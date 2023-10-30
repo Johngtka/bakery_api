@@ -16,7 +16,6 @@ function getProducts()
         }
         $filteredResult[] = $filteredRow;
     }
-
     echo json_encode($filteredResult);
 }
 
@@ -32,17 +31,7 @@ function postProduct($newProduct)
     $query->execute();
     $result = $query->fetchAll();
 
-    foreach ($result as $row) {
-        foreach ($row as $key => $value) {
-            if (is_numeric($key)) {
-                continue;
-            }
-            $filteredRow[$key] = $value;
-        }
-        $filteredResult[] = $filteredRow;
-    }
-
-    echo json_encode($filteredResult);
+    echo json_encode($result);
 }
 
 function editProduct($editedProduct)

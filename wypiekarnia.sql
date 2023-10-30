@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 26, 2023 at 11:31 AM
+-- Generation Time: Paź 30, 2023 at 08:41 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -90,7 +90,7 @@ CREATE TABLE `klijeci` (
 
 INSERT INTO `klijeci` (`id`, `name`, `surName`, `email`, `phone`, `login`, `password`) VALUES
 (1, 'Janusz', 'Kowalski', 'jkowalski@gmail.com', '12121212', 'jkowalski56', 'qwerty'),
-(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '121211221221', 'admin1111', 'qwerty');
+(2, 'Jan', 'Gorczyński', 'johngtka@gmail.com', '577700117', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE `produkty` (
 --
 
 INSERT INTO `produkty` (`id`, `name`, `price`, `weight`, `components`, `description`) VALUES
-(1, 'Tort Urodzinowy', 50, 1000, 'Biszkopt, Krem, owoce, Kruszona Czekolada', 'Tort na żądanie, kolorowy i dla ludzi w każdym wieku'),
+(1, 'Tort Urodzinowy', 60, 1000, 'Biszkopt, Krem, owoce, Kruszona Czekolada', 'Tort na żądanie, kolorowy i dla ludzi w każdym wieku'),
 (2, 'Tort dla Smakoszy', 20, 1000, 'Biszkopt Kakaowy, Krem z Gożkiej czekolady, Owoce, Kruszona Biała Czekolada', 'Tort jaki chcesz i specjalnie dla ciebie'),
 (3, 'Tort Jubileuszowy', 30, 1000, 'Biszkopt, Krem, Dużo owoców ', 'Tort Elegancki i wystrojny na specjalną okazję'),
 (4, 'Tort Ślubny', 40, 1000, 'Biszkopt, Krem, Owoce, Posypka z biszkoptów moczonych w Weskey', 'Pyszny tort z dodatkami'),
@@ -151,14 +151,6 @@ CREATE TABLE `promocje` (
   `Value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `promocje`
---
-
-INSERT INTO `promocje` (`id`, `ProductName`, `StartDate`, `EndDate`, `Value`) VALUES
-(1, 'Babeczka Sezonowa', '2023-10-16', '2023-10-22', '100'),
-(2, 'Tort dla Smakoszy', '2023-10-23', '2023-10-30', '40');
-
 -- --------------------------------------------------------
 
 --
@@ -189,21 +181,6 @@ CREATE TABLE `zamowienia` (
   `userLogin` text NOT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `zamowienia`
---
-
-INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `date`, `time`, `phone`, `userLogin`, `comment`) VALUES
-(1, 'Tort dla Smakoszy', 1, '2023-09-30', '12:30:00', 123123123, 'jkowalski56', 'test'),
-(2, 'Ciasto Sernik', 1, '2023-09-30', '13:30:00', 123123123, 'jkowalski56', 'test1'),
-(3, 'Tarty Malinowa', 3, '2023-09-30', '14:30:00', 123123123, 'jkowalski56', 'test3'),
-(4, 'Babeczki Czekoladowa Czarna', 4, '2023-09-30', '15:30:00', 123123123, 'jkowalski56', 'test4'),
-(5, 'Ciasteczka Cantuccini', 5, '2023-09-30', '16:30:00', 123123123, 'jkowalski56', 'test5'),
-(6, 'Bułeczek Kajzerka', 6, '2023-09-30', '17:30:00', 123123123, 'jkowalski56', 'test6'),
-(7, 'Bułeczek Przenna', 7, '2023-09-30', '18:30:00', 123123123, 'jkowalski56', 'test7'),
-(8, 'Tort Urodzinowy', 2, '2023-10-27', '12:02:00', 2121212, 'jkowalski56', 'sdasda'),
-(9, 'Ciasto Browne', 2, '2023-10-29', '12:02:00', 1121212121, 'jkowalski56', 'test');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -271,7 +248,7 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT for table `promocje`
 --
 ALTER TABLE `promocje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `relacje`
@@ -283,7 +260,7 @@ ALTER TABLE `relacje`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
