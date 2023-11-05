@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 30, 2023 at 08:41 PM
+-- Generation Time: Lis 05, 2023 at 08:52 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -66,7 +66,8 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 (25, 'Zmiana Zabezpieczeń', '2023-08-14', 'W tej aktualizacji naprawiłem zabezpieczenia funkcji mojego sklepu oraz silnik wyświetlający </br> login zalogowanego użytkownika w menu, jeśli użytkownik nie jest zalogowany </br> to wyświetli się napis \'Zaloguj się\'. </br> Zastosowano również lepszą czytelność kodu oraz dodano walidację </br> numeru telefonu, wszędzie tam gdzie to jest możliwe. </br> Pozdrawiam Twórca :-)'),
 (26, 'Nowe Zarządzanie', '2023-09-05', 'Ta aktualizacja obejmuje dodanie zewnętrznej aplikacji do sterowania </br> zdarzeniami wypiekarni np. (Aktualizacje, Produkty, Promocje itd). </br> Zmieniłem też logo mojego sklepu które ma symbolizować połączenie 2 aplikacji w jeden serwis oto one: </br> <img id=\'k\' src=\'logo.png\'/> </br> Przerobiłemy też cały system plików wypiekarni, aby był bardziej zoptymalizowany pod nowe technologie. </br> Pozdrawiam Twórca :-)'),
 (27, 'Nowe Funkcje', '2023-09-29', 'Ta aktualizacja obejmuje dodanie nowego kafelka do profilu użytkownika, który ma </br> wyświetlać aktualne promocje występujące w bazie danych wraz z ich ilością pokazywaną w kafelku. </br> Zmieniłem też wygląd przycisków akcyjnych w każdym formulażu na moim sklepie. </br> Rozdzieliłem silnik tworzenia nowego użytkownika od jego strony powitalnej </br> i od teraz strona powitalna jest osobnym modułem. </br> Zaktualizowałem ikony mojej aplikacji oraz zaimplementowałem je do </br> przycisków oraz innych części sklepu. </br> W końcu po tylu latach dodałem odpowiednią treść do wszystkich stopek w moim sklepie. </br> Z mojej strony to by było na tyle, Pozdrawiam Twórca :-)'),
-(28, 'Nowe Podsumowania', '2023-10-26', 'Ta aktualizacja obejmuje zmianę wyglądu oraz sposobu działania systemu zamówień w moim sklepie. </br> Usunąłem wpisywanie e-mail w zamówienie i zastąpiłem go loginem użytkownika. </br> Zmieniłem sposób generowania podsumowań oraz uczyniłem kod mojego sklepu bardziej czytelnym. </br> Pozdrawiam Twórca :-)');
+(28, 'Nowe Podsumowania', '2023-10-26', 'Ta aktualizacja obejmuje zmianę wyglądu oraz sposobu działania systemu zamówień w moim sklepie. </br> Usunąłem wpisywanie e-mail w zamówienie i zastąpiłem go loginem użytkownika. </br> Zmieniłem sposób generowania podsumowań oraz uczyniłem kod mojego sklepu bardziej czytelnym. </br> Pozdrawiam Twórca :-)'),
+(29, 'Nowa Logika Systemu Zamówień', '2023-11-05', 'W tej aktualizacji zmieniłem delikatnie wygląd podsumowań zamówień oraz </br> usunąłem pola do wpisywania daty i czasu dostawy przez użytkownika </br> na rzecz automatyzacji oraz lepszej jakości obsługi klijenta. </br> Skompresowałem też kod mojego sklepu przez usunięcie zbędnych komentarzy z kodu. </br> Pozdrawiam Twórca :-)');
 
 -- --------------------------------------------------------
 
@@ -175,12 +176,19 @@ CREATE TABLE `zamowienia` (
   `id` int(11) NOT NULL,
   `prodName` text NOT NULL,
   `count` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `time` time NOT NULL,
+  `orderDate` date NOT NULL,
+  `orderTime` text NOT NULL,
   `phone` int(11) NOT NULL,
   `userLogin` text NOT NULL,
   `comment` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zamowienia`
+--
+
+INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `orderDate`, `orderTime`, `phone`, `userLogin`, `comment`) VALUES
+(1, 'Tort Urodzinowy', 2, '2023-11-04', '18:48', 123123123, 'jkowalski56', 'test\r\n');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -230,7 +238,7 @@ ALTER TABLE `zamowienia`
 -- AUTO_INCREMENT for table `aktualizacje`
 --
 ALTER TABLE `aktualizacje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `klijeci`
@@ -260,7 +268,7 @@ ALTER TABLE `relacje`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
