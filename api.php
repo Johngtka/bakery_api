@@ -25,6 +25,14 @@ function API()
             $updates . getUpdates();
         }
 
+        if (isset($requestData['getProducts']) && $requestData['getProducts'] != false) {
+            $products . getProducts();
+        }
+
+        if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
+            $sales . getSales();
+        }
+
         if (isset($requestData['postUpdate']) && $requestData['postUpdate'] != false) {
             $newUpdate = [
                 'name' => $requestData['name'],
@@ -32,20 +40,6 @@ function API()
                 'desc' => $requestData['desc']
             ];
             $updates . postUpdate($newUpdate);
-        }
-
-        if (isset($requestData['editUpdate']) && $requestData['editUpdate'] != false) {
-            $editUpdate = [
-                'name' => $requestData['name'],
-                'date' => $requestData['date'],
-                'desc' => $requestData['desc'],
-                'id' => $requestData['id']
-            ];
-            $updates . editUpdate($editUpdate);
-        }
-
-        if (isset($requestData['getProducts']) && $requestData['getProducts'] != false) {
-            $products . getProducts();
         }
 
         if (isset($requestData['postProduct']) && $requestData['postProduct'] != false) {
@@ -57,6 +51,26 @@ function API()
                 'description' => $requestData['description']
             ];
             $products . postProduct($newProduct);
+        }
+
+        if (isset($requestData['postSale']) && $requestData['postSale'] != false) {
+            $newSale = [
+                'name' => $requestData['name'],
+                'sDate' => $requestData['sDate'],
+                'eDate' => $requestData['eDate'],
+                'val' => $requestData['value']
+            ];
+            $sales . postSales($newSale);
+        }
+
+        if (isset($requestData['editUpdate']) && $requestData['editUpdate'] != false) {
+            $editUpdate = [
+                'name' => $requestData['name'],
+                'date' => $requestData['date'],
+                'desc' => $requestData['desc'],
+                'id' => $requestData['id']
+            ];
+            $updates . editUpdate($editUpdate);
         }
 
         if (isset($requestData['editProduct']) && $requestData['editProduct'] != false) {
@@ -76,20 +90,6 @@ function API()
                 'id' => $requestData['id']
             ];
             $products . deleteProduct($deletedProduct);
-        }
-
-        if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
-            $sales . getSales();
-        }
-
-        if (isset($requestData['postSale']) && $requestData['postSale'] != false) {
-            $newSale = [
-                'name' => $requestData['name'],
-                'sDate' => $requestData['sDate'],
-                'eDate' => $requestData['eDate'],
-                'val' => $requestData['value']
-            ];
-            $sales . postSales($newSale);
         }
 
         if (isset($requestData['deleteSale']) && $requestData['deleteSale'] != false) {
