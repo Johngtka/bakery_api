@@ -65,22 +65,22 @@ function API()
 
         if (isset($requestData['editUpdate']) && $requestData['editUpdate'] != false) {
             $editUpdate = [
+                'id' => $requestData['id'],
                 'name' => $requestData['name'],
                 'date' => $requestData['date'],
-                'desc' => $requestData['desc'],
-                'id' => $requestData['id']
+                'desc' => $requestData['desc']
             ];
             $updates . editUpdate($editUpdate);
         }
 
         if (isset($requestData['editProduct']) && $requestData['editProduct'] != false) {
             $editedProduct = [
+                'id' => $requestData['id'],
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
                 'mass' => $requestData['weight'],
                 'elements' => $requestData['components'],
-                'description' => $requestData['description'],
-                'id' => $requestData['id']
+                'description' => $requestData['description']
             ];
             $products . editProduct($editedProduct);
         }
