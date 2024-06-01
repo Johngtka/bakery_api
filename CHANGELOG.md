@@ -2,7 +2,20 @@
 
 ### CHANGELOG
 
-### [0.0.4](https://github.com/Johngtka/bakery_api/compare/v.0.0.3...v.0.0.4) (2023-10-24)
+### [0.0.5](https://github.com/Johngtka/bakery_api/compare/v.0.0.4...v.0.0.5)(2024-06-01)
+
+### Features
+
+-   New structure of API ([#13](https://github.com/Johngtka/bakery_api/pull/13))
+
+### Fixes
+
+-   Global Fixes of API ([#12](https://github.com/Johngtka/bakery_api/pull/12))
+
+-   Fixes of searching user orders
+    ([#11](https://github.com/Johngtka/bakery_api/pull/11))
+
+### [0.0.4](https://github.com/Johngtka/bakery_api/compare/v.0.0.3...v.0.0.4)(2023-10-24)
 
 ### Features
 
