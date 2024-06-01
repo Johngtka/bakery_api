@@ -2,7 +2,7 @@
 
 ### CHANGELOG
 
-### [0.0.5](https://github.com/Johngtka/bakery_api/compare/v.0.0.4...v.0.0.5)(2024-06-01)
+### [0.0.5](https://github.com/Johngtka/bakery_api/compare/v.0.0.4...v.0.0.5) (2024-06-01)
 
 ### Features
 
