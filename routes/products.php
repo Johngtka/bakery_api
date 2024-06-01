@@ -38,12 +38,12 @@ function editProduct($editedProduct)
 {
     global $db;
     $query = $db->prepare("UPDATE produkty SET name = :name, price = :cost, weight = :weight, components = :components, description = :description WHERE id = :productID");
+    $query->bindValue(":productID", $editedProduct['id'], PDO::PARAM_INT);
     $query->bindValue(":name", $editedProduct['name'], PDO::PARAM_STR);
     $query->bindValue(":cost", $editedProduct['price']);
     $query->bindValue(":weight", $editedProduct['mass'], PDO::PARAM_INT);
     $query->bindValue(":components", $editedProduct['elements'], PDO::PARAM_STR);
     $query->bindValue(":description", $editedProduct['description'], PDO::PARAM_STR);
-    $query->bindValue(":productID", $editedProduct['id'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
     echo json_encode($result);
