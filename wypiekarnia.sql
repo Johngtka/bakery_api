@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Lis 05, 2023 at 08:52 PM
+-- Generation Time: Cze 13, 2024 at 06:08 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -149,6 +149,7 @@ CREATE TABLE `promocje` (
   `ProductName` text NOT NULL,
   `StartDate` text NOT NULL,
   `EndDate` text NOT NULL,
+  `SaleCode` text NOT NULL,
   `Value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
