@@ -26,10 +26,11 @@ function getSales()
 function postSales($newSale)
 {
     global $db;
-    $query = $db->prepare("INSERT INTO promocje VALUES (NULL, :prodName, :startDate, :endDate, :value)");
+    $query = $db->prepare("INSERT INTO promocje VALUES (NULL, :prodName, :startDate, :endDate, :sCode, :value)");
     $query->bindValue(':prodName', $newSale['name'], PDO::PARAM_STR);
     $query->bindValue(':startDate', $newSale['sDate'], PDO::PARAM_STR);
     $query->bindValue(':endDate', $newSale['eDate'], PDO::PARAM_STR);
+    $query->bindValue(':sCode', $newSale['sCode'], PDO::PARAM_STR);
     $query->bindValue(':value', $newSale['val'], PDO::PARAM_INT);
     $query->execute();
     $result = $query->fetchAll();
