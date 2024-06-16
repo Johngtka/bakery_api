@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Cze 16, 2024 at 12:20 PM
+-- Generation Time: Cze 16, 2024 at 04:45 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -67,7 +67,8 @@ INSERT INTO `aktualizacje` (`id`, `name`, `date`, `description`) VALUES
 (26, 'Nowe Zarządzanie', '2023-09-05', 'Ta aktualizacja obejmuje dodanie zewnętrznej aplikacji do sterowania </br> zdarzeniami wypiekarni np. (Aktualizacje, Produkty, Promocje itd). </br> Zmieniłem też logo mojego sklepu które ma symbolizować połączenie 2 aplikacji w jeden serwis oto one: </br> <img id=\'k\' src=\'logo.png\'/> </br> Przerobiłemy też cały system plików wypiekarni, aby był bardziej zoptymalizowany pod nowe technologie. </br> Pozdrawiam Twórca :-)'),
 (27, 'Nowe Funkcje', '2023-09-29', 'Ta aktualizacja obejmuje dodanie nowego kafelka do profilu użytkownika, który ma </br> wyświetlać aktualne promocje występujące w bazie danych wraz z ich ilością pokazywaną w kafelku. </br> Zmieniłem też wygląd przycisków akcyjnych w każdym formulażu na moim sklepie. </br> Rozdzieliłem silnik tworzenia nowego użytkownika od jego strony powitalnej </br> i od teraz strona powitalna jest osobnym modułem. </br> Zaktualizowałem ikony mojej aplikacji oraz zaimplementowałem je do </br> przycisków oraz innych części sklepu. </br> W końcu po tylu latach dodałem odpowiednią treść do wszystkich stopek w moim sklepie. </br> Z mojej strony to by było na tyle, Pozdrawiam Twórca :-)'),
 (28, 'Nowe Podsumowania', '2023-10-26', 'Ta aktualizacja obejmuje zmianę wyglądu oraz sposobu działania systemu zamówień w moim sklepie. </br> Usunąłem wpisywanie e-mail w zamówienie i zastąpiłem go loginem użytkownika. </br> Zmieniłem sposób generowania podsumowań oraz uczyniłem kod mojego sklepu bardziej czytelnym. </br> Pozdrawiam Twórca :-)'),
-(29, 'Nowa Logika Systemu Zamówień', '2023-11-05', 'W tej aktualizacji zmieniłem delikatnie wygląd podsumowań zamówień oraz </br> usunąłem pola do wpisywania daty i czasu dostawy przez użytkownika </br> na rzecz automatyzacji oraz lepszej jakości obsługi klijenta. </br> Skompresowałem też kod mojego sklepu przez usunięcie zbędnych komentarzy z kodu. </br> Pozdrawiam Twórca :-)');
+(29, 'Nowa Logika Systemu Zamówień', '2023-11-05', 'W tej aktualizacji zmieniłem delikatnie wygląd podsumowań zamówień oraz </br> usunąłem pola do wpisywania daty i czasu dostawy przez użytkownika </br> na rzecz automatyzacji oraz lepszej jakości obsługi klijenta. </br> Skompresowałem też kod mojego sklepu przez usunięcie zbędnych komentarzy z kodu. </br> Pozdrawiam Twórca :-)'),
+(30, 'Nowy system rabatowy, Ulepszenia i Kompresja Zamówień', '2024-06-16', 'W tej aktualizacji dodałem do kafelków promocyjnych w waszych profilach przycisk, który kopiuje kod rabatowy z promocji. </br> Aktualnie można wkleić ten kod z promocji do formularza zamówienia jeśli jest aktywna promocja w sklepie. </br> Jeśli kod promocyjny będzie nie zgodny z kodami w promocjach, rabat się nie naliczy. </br> Pracę nad ulepszeniami nadal trwają i w dzisiejszej aktualizacji publikuję kilka z nich. </br> Pozdrawiam Twórca :-)');
 
 -- --------------------------------------------------------
 
@@ -240,7 +241,7 @@ ALTER TABLE `zamowienia`
 -- AUTO_INCREMENT for table `aktualizacje`
 --
 ALTER TABLE `aktualizacje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `klijeci`
