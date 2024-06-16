@@ -58,6 +58,7 @@ function API()
                 'name' => $requestData['name'],
                 'sDate' => $requestData['sDate'],
                 'eDate' => $requestData['eDate'],
+                'sCode' => $requestData['sCode'],
                 'val' => $requestData['value']
             ];
             $sales . postSales($newSale);
