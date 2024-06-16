@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Cze 13, 2024 at 06:08 PM
+-- Generation Time: Cze 16, 2024 at 12:20 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -153,6 +153,13 @@ CREATE TABLE `promocje` (
   `Value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `promocje`
+--
+
+INSERT INTO `promocje` (`id`, `ProductName`, `StartDate`, `EndDate`, `SaleCode`, `Value`) VALUES
+(1, 'Ciasto Sernik', '2024-06-13', '2024-06-23', 'MUqxX2kV', '30');
+
 -- --------------------------------------------------------
 
 --
@@ -181,15 +188,9 @@ CREATE TABLE `zamowienia` (
   `orderTime` text NOT NULL,
   `phone` int(11) NOT NULL,
   `userLogin` text NOT NULL,
-  `comment` text NOT NULL
+  `comment` text NOT NULL,
+  `SaleCode` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `zamowienia`
---
-
-INSERT INTO `zamowienia` (`id`, `prodName`, `count`, `orderDate`, `orderTime`, `phone`, `userLogin`, `comment`) VALUES
-(1, 'Tort Urodzinowy', 2, '2023-11-04', '18:48', 123123123, 'jkowalski56', 'test\r\n');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -257,7 +258,7 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT for table `promocje`
 --
 ALTER TABLE `promocje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `relacje`
@@ -269,7 +270,7 @@ ALTER TABLE `relacje`
 -- AUTO_INCREMENT for table `zamowienia`
 --
 ALTER TABLE `zamowienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
