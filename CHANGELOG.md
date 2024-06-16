@@ -2,6 +2,12 @@
 
 ### CHANGELOG
 
+### [0.0.6](https://github.com/Johngtka/bakery_api/compare/v.0.0.5...v.0.0.6)
+
+### Features
+
+-   New Sale Code Putter ([#14](https://github.com/Johngtka/bakery_api/pull/13))
+
 ### [0.0.5](https://github.com/Johngtka/bakery_api/compare/v.0.0.4...v.0.0.5) (2024-06-01)
 
 ### Features
