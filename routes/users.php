@@ -48,8 +48,9 @@ function getUsersOrders($userLogin)
 function userOrderDiscountCodeChecker($orderDiscountCode)
 {
     global $db;
-    $query = $db->prepare("SELECT zamowienia.SaleCode AS orderCode, promocje.SaleCode as discountCode FROM zamowienia JOIN promocje ON zamowienia.SaleCode = promocje.SaleCode WHERE zamowienia.SaleCode = :discountCode");
-    $query->bindValue(':discountCode', $orderDiscountCode, PDO::PARAM_STR);
+    $query = $db->prepare("SELECT zamowienia.SaleCode AS orderCode, promocje.SaleCode AS discountCode FROM zamowienia JOIN promocje ON zamowienia.SaleCode = promocje.SaleCode AND zamowienia.prodName = promocje.ProductName WHERE zamowienia.SaleCode = :discountCode AND zamowienia.prodName = :productName");
+    $query->bindValue(':discountCode', $orderDiscountCode['code'], PDO::PARAM_STR);
+    $query->bindValue(':productName', $orderDiscountCode['orderedProdName'], PDO::PARAM_STR);
     $query->execute();
     $result = $query->fetchAll();
 

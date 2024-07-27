@@ -22,8 +22,11 @@ function API()
         }
 
         if (isset($requestData['orderDiscountCode']) && $requestData['orderDiscountCode'] != false) {
-            $orderDiscountCode = $requestData['code'];
-            $users . userOrderDiscountCodeChecker($orderDiscountCode);
+            $orderDataToCheck = [
+                'code' => $requestData['code'],
+                'orderedProdName' => $requestData['prodName']
+            ];
+            $users . userOrderDiscountCodeChecker($orderDataToCheck);
         }
 
         if (isset($requestData['getUpdates']) && $requestData['getUpdates'] != false) {
