@@ -13,5 +13,5 @@ try {
 
     $app . API();
 } catch (PDOException $error) {
-    echo json_encode([]);
+    echo json_encode($error->getCode());
 }
