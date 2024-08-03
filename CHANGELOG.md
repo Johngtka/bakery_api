@@ -2,11 +2,21 @@
 
 ### CHANGELOG
 
+### [0.0.7](https://github.com/Johngtka/bakery_api/compare/v.0.0.6...v.0.0.7) (2024-08-03)
+
+### Features
+
+-   New Safety Condition in Order Module
+    ([#16](https://github.com/Johngtka/bakery_api/pull/16))
+
+-   Checker for compare OrderCode and SaleCode
+    ([#15](https://github.com/Johngtka/bakery_api/pull/15))
+
 ### [0.0.6](https://github.com/Johngtka/bakery_api/compare/v.0.0.5...v.0.0.6) (2024-06-16)
 
 ### Features
 
--   New Sale Code Putter ([#14](https://github.com/Johngtka/bakery_api/pull/13))
+-   New Sale Code Putter ([#14](https://github.com/Johngtka/bakery_api/pull/14))
 
 ### [0.0.5](https://github.com/Johngtka/bakery_api/compare/v.0.0.4...v.0.0.5) (2024-06-01)
 
