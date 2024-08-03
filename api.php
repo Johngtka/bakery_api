@@ -22,8 +22,11 @@ function API()
         }
 
         if (isset($requestData['orderDiscountCode']) && $requestData['orderDiscountCode'] != false) {
-            $orderDiscountCode = $requestData['code'];
-            $users . userOrderDiscountCodeChecker($orderDiscountCode);
+            $orderDataToCheck = [
+                'code' => $requestData['code'],
+                'orderedProdName' => $requestData['prodName']
+            ];
+            $users . userOrderDiscountCodeChecker($orderDataToCheck);
         }
 
         if (isset($requestData['getUpdates']) && $requestData['getUpdates'] != false) {
@@ -49,9 +52,9 @@ function API()
 
         if (isset($requestData['postProduct']) && $requestData['postProduct'] != false) {
             $newProduct = [
+                'mass' => $requestData['weight'],
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
-                'mass' => $requestData['weight'],
                 'elements' => $requestData['components'],
                 'description' => $requestData['description']
             ];
@@ -60,11 +63,11 @@ function API()
 
         if (isset($requestData['postSale']) && $requestData['postSale'] != false) {
             $newSale = [
+                'val' => $requestData['value'],
                 'name' => $requestData['name'],
                 'sDate' => $requestData['sDate'],
                 'eDate' => $requestData['eDate'],
-                'sCode' => $requestData['sCode'],
-                'val' => $requestData['value']
+                'sCode' => $requestData['sCode']
             ];
             $sales . postSales($newSale);
         }
@@ -82,9 +85,9 @@ function API()
         if (isset($requestData['editProduct']) && $requestData['editProduct'] != false) {
             $editedProduct = [
                 'id' => $requestData['id'],
+                'mass' => $requestData['weight'],
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
-                'mass' => $requestData['weight'],
                 'elements' => $requestData['components'],
                 'description' => $requestData['description']
             ];
