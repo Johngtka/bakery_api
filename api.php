@@ -37,6 +37,10 @@ function API()
             $products . getProducts();
         }
 
+        if (isset($requestData['getListOfProducts']) && $requestData['getListOfProducts'] != false) {
+            $products . getListOfProducts();
+        }
+
         if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
             $sales . getSales();
         }

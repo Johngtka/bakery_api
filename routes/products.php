@@ -19,6 +19,25 @@ function getProducts()
     echo json_encode($filteredResult);
 }
 
+function getListOfProducts()
+{
+    global $db;
+    $query = $db->prepare("SELECT name from produkty");
+    $query->execute();
+    $result = $query->fetchAll();
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+    echo json_encode($filteredResult);
+}
+
 function postProduct($newProduct)
 {
     global $db;
