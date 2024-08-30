@@ -60,7 +60,7 @@ function API()
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
                 'elements' => $requestData['components'],
-                'description' => $requestData['description']
+                'recipe' => $requestData['recipe']
             ];
             $products . postProduct($newProduct);
         }
@@ -93,7 +93,7 @@ function API()
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
                 'elements' => $requestData['components'],
-                'description' => $requestData['description']
+                'recipe' => $requestData['recipe']
             ];
             $products . editProduct($editedProduct);
         }
