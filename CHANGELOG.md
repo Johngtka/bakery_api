@@ -2,6 +2,13 @@
 
 ### CHANGELOG
 
+### [0.0.8](https://github.com/Johngtka/bakery_api/compare/v.0.0.7...v.0.0.8) (2024-09-01)
+
+### Features
+
+-   feat: improve API for sending back a name list of all products
+    ([#17](https://github.com/Johngtka/bakery_api/pull/17))
+
 ### [0.0.7](https://github.com/Johngtka/bakery_api/compare/v.0.0.6...v.0.0.7) (2024-08-03)
 
 ### Features
