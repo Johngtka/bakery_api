@@ -37,6 +37,10 @@ function API()
             $products . getProducts();
         }
 
+        if (isset($requestData['getListOfProducts']) && $requestData['getListOfProducts'] != false) {
+            $products . getListOfProducts();
+        }
+
         if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
             $sales . getSales();
         }
@@ -56,7 +60,7 @@ function API()
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
                 'elements' => $requestData['components'],
-                'description' => $requestData['description']
+                'recipe' => $requestData['recipe']
             ];
             $products . postProduct($newProduct);
         }
@@ -89,7 +93,7 @@ function API()
                 'name' => $requestData['name'],
                 'price' => $requestData['price'],
                 'elements' => $requestData['components'],
-                'description' => $requestData['description']
+                'recipe' => $requestData['recipe']
             ];
             $products . editProduct($editedProduct);
         }

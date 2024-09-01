@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Cze 16, 2024 at 04:45 PM
+-- Generation Time: Wrz 01, 2024 at 12:07 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -106,38 +106,38 @@ CREATE TABLE `produkty` (
   `price` float NOT NULL,
   `weight` int(11) NOT NULL,
   `components` text NOT NULL,
-  `description` text NOT NULL
+  `recipe` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Dumping data for table `produkty`
 --
 
-INSERT INTO `produkty` (`id`, `name`, `price`, `weight`, `components`, `description`) VALUES
-(1, 'Tort Urodzinowy', 60, 1000, 'Biszkopt, Krem, owoce, Kruszona Czekolada', 'Tort na żądanie, kolorowy i dla ludzi w każdym wieku'),
-(2, 'Tort dla Smakoszy', 20, 1000, 'Biszkopt Kakaowy, Krem z Gożkiej czekolady, Owoce, Kruszona Biała Czekolada', 'Tort jaki chcesz i specjalnie dla ciebie'),
-(3, 'Tort Jubileuszowy', 30, 1000, 'Biszkopt, Krem, Dużo owoców ', 'Tort Elegancki i wystrojny na specjalną okazję'),
-(4, 'Tort Ślubny', 40, 1000, 'Biszkopt, Krem, Owoce, Posypka z biszkoptów moczonych w Weskey', 'Pyszny tort z dodatkami'),
-(5, 'Ciasto Drożdżowe', 15, 1000, 'Drożdże, jajka, owoce, kruszonka', 'Pyszny drożdżowiec jak u babci'),
-(6, 'Ciasto Sernik', 20, 1000, 'Ser twarogowy, białka z jajek, cukier', 'Przepyszny serniczek jak u mamy'),
-(7, 'Ciasto Browne', 25, 1000, 'Czekolada Mleczna, masło, jajka, mleko, maliny, czekolada', 'Czekoladowe niebo w gębie'),
-(8, 'Ciasto dziecięce', 30, 1000, 'Biszkopt kakaowy, krem malinowy, galaretka truskawkowa', 'Najlepsze dla dzieci bo dzieci to lubią'),
-(9, 'Tarta jabłkowa na mlecznym kremie', 35, 1000, 'Ciasto tartowe, krem mleczno-budyniowy, jabłka', 'Pyszna tarta jabłkowa na każde spotkanie'),
-(10, 'Tarta wiosenna', 30, 1000, 'Ciasto tartowe, owoce(Truskawki i Borówki), krem budyniowy z czekoladą białą ', 'Pyszna tarta, na randki i spotkania z przyjaciółmi'),
-(11, 'Tarta czekoladowo-orzechowa', 25, 1000, 'Ciasto tartowe, Krem czekoladowy, orzechy w karmelu', 'Pyszna tarta na jesienne wieczory'),
-(12, 'Tarta malinowa', 20, 1000, 'Ciasto tartowe, krem mleczno-czekoladowy, maliny', 'Przepyszna tarta na spotkania'),
-(13, 'Ciasteczka Amerykańskie', 5, 100, 'Mąka, masło, jajka, mleko, czekolada', 'Amerykańskie ciasteczka COCO'),
-(14, 'Ciasteczka Ziarna w Karmelu', 5, 100, 'karmel, ziarna', 'Na przekąske bardzo dobre'),
-(15, 'Ciasteczka owsiane z bakaliami', 7, 100, 'ziarna owsa, jajka, bakalie', 'Pyszne i zdrowe ciasteczka'),
-(16, 'Ciasteczka Cantuccini', 6, 150, 'Mąka, mleko, jajka, czekolada', 'Pyszne i lekkie Cantuccini po włosku'),
-(17, 'Bułka Przenna', 0.8, 100, 'Mleko, mąka, jajka', 'Pyszne, świeże bułeczki tylko u nas'),
-(18, 'Bułka Kajzerka', 0.8, 100, '...', '...'),
-(19, 'Bułka Razowa', 0.8, 100, 'Mąka, jajka, mleko, zakwas, ziarna', 'Pyszna i zdrowa bułeczka razowa'),
-(20, 'Bułka Ziarnista', 0.8, 100, 'Mąka, jajka, mleko, ziarna', 'Pyszna bułeczka z ziarnami'),
-(21, 'Babeczka Czekoladowa Biała', 9, 100, 'Babeczka kakaowa z polana białączekoladą', '...'),
-(22, 'Babeczka Czekoladowa Czarna', 7, 100, 'Babeczka z polana czarną czekoladą', '...'),
-(23, 'Babeczka Malinowa\r\n', 5, 100, 'Babeczka, polewa lukrowa, maliny', 'babeczka polana lukrem i posypana malinami'),
-(24, 'Babeczka Sezonowa', 8, 100, 'Ciasto kruche małe, krem, owoce, żelatyna', 'babeczka modyfikowana sezonowo\r\n');
+INSERT INTO `produkty` (`id`, `name`, `price`, `weight`, `components`, `recipe`) VALUES
+(1, 'Tort - Urodzinowy', 60, 1000, 'Biszkopt: 6jajek, 6łyżek mąki ziemniaczanej, 150g cukru, 200g mąki pszennej\nMasa: 400ml śmietanki kremówki 36%, 400g serka mascarpone, 700g truskawek, 2łyżki cukru pudru\nDo nasączania biszkopta: pół szklanki wody, 1łyżka soku z cytryny, sok wyciśnięty z 2 pomarańczy', 'https://aniastarmach.pl/przepis/tort-urodzinowy/'),
+(2, 'Tort - Dla Smakoszy', 20, 1000, 'Biszkopt: 5 jajek (S lub M), 200g cukru pudru, 75g mąki pszennej, 75g mąki ziemniaczanej, 1 łyżeczka proszku do pieczenia, opcjonalnie: 6 łyżeczek likieru amaretto do nasączenia.\nKrem: 500g mascarpone, 60ml śmietanki 30%, 2 tabliczki białej czekolady.\nOwoce: 200g malin (mogą być mrożone), 2 łyżki cukru, 1 łyżka kisielu owocowego lub skrobi ziemniaczanej.\nDekoracja: np. świeże maliny lub gotowe posypki, wiórki kokosowe itp.', 'https://www.kwestiasmaku.com/przepis/tort-z-biala-czekolada'),
+(3, 'Tort - Jubileuszowy', 30, 1000, 'Biszkopt: 6 - jajek, szczypta soli, 1 łyżka - cukru waniliowego, 1 szklanka - cukru, 1 szklanka - mąki, 1 łyżka - oliwy.\nPoncz: sok z cytryny, kieliszek wódki, trochę wody, cukier do smaku.\nKrem: ½ kg - śmietany 36%, 250g - sera ricotta, 1 - galaretka cytrynowa.\nMasło Orzechowe: 2 szklanki - fistaszków niesolonych i nieprażonych, szczypta soli, 2 łyżki - miodu.\nDekoracja: prażone fistaszki, kakao.', 'https://ewawachowicz.pl/przepisy,,1051.html'),
+(4, 'Tort - Ślubny', 40, 1000, 'Bezowy blat migdałowo-kokosowy: 40g mielonych  migdałów, 35g cukru  pudru, 35g wiórków kokosowych, skórka starta z ½ cytryny, 100g białka, 80g cukru, szczypta  soli.\nNasączenie: 75ml likieru limoncello, 75 ml wody.\nKrem cytrynowy z tymiankiem: 320 ml mleka 3,2%, 3 łyżki mąki pszennej, 3 łyżki mąki ziemniaczanej, sok z 3 cytryn, skórka starta z 2 cytryn, 3 jajka, 200g cukru, 260g masła, pół pęczka tymianku cytrynowego.\nKrem szampański: 3 żółtka, 60g cukru, 180ml wytrawnego wina musującego, 6g żelatyny, 200ml śmietanki 36%.\nPosypka z białej czekolady: 100g czekolady, 45g śmietanki 30%, dowolny barwnik  w żelu.', 'https://www.elle.pl/artykul/torty-weselne-3-proste-przepisy-na-piekne-ciasta-ktore-mozesz-upiec-na-slub-swojej-przyjaciolki-200226093512'),
+(5, 'Ciasto - Drożdżowe', 15, 1000, 'Ciasto: 50g świeżych drożdży, 200ml mleka, 3 jajka + dodatkowo 3 żółtka, 100g drobnego cukru, 500g mąki pszennej, 100g masła, 400g truskawek.\nKruszonka: 100g mąki pszennej, 60g zimnego masła, 4 łyżki cukru (pudru lub drobnego).\nLukier Cytrynowy: łyżka soku z cytryny, 1/2 szklanki cukru pudru.', 'https://www.kwestiasmaku.com/przepis/ciasto-drozdzowe-z-truskawkami'),
+(6, 'Ciasto - Sernik', 20, 1000, 'Masa: 1kg zmielonego twarogu, 250g miękkiego masła, 1 i 1/3 szklanki cukru pudru, 6 jajek, 1 opakowanie cukru wanilinowego, 150ml śmietanki 36%, 4 łyżki mąki ziemniaczanej', 'https://www.kwestiasmaku.com/przepis/sernik-tradycyjny'),
+(7, 'Ciasto - Browne', 25, 1000, 'Masa: 200g masła, 200g gorzkiej czekolady, 3 jajka (temp. pokojowa), 250g cukru, 135g mąki, mała szczypta soli, dodatkowo: ok. 50 - 100g gorzkiej czekolady na wierzch', 'https://www.kwestiasmaku.com/desery/ciasta/czekoladowe_brownie/przepis.html'),
+(8, 'Ciasto - Dziecięce', 30, 1000, 'Masa: 600g truskawek, 100g cukru pudru, 2 łyżki soku z cytryny, 20g żelatyny spożywczej (2 łyżki stołowe), 250g śmietanki 36% lub 30 (do ubijania, b. dobrze schłodzona), 500g twarogu sernikowego.\nRanty Ciasta: 200g podłużnych biszkoptów jak do tiramisu.\nDo Dekoracji​, 250g śmietanki 36% lub 30% (do ubijania, b. dobrze schłodzona), 4 łyżki cukru pudru, świeże truskawki.', 'https://www.kwestiasmaku.com/przepis/sernik-na-zimno-z-musem-truskawkowym'),
+(9, 'Tarta - Truskawkowa Stracciatella', 35, 1000, 'Ciasto Kruche: 200g mąki pszennej, 135g masła (zimnego), mała szczypta soli, 1/3 szklanki cukru pudru, 1 żółtko.\nKrem Mascarpone: 250g serka mascarpone (zimnego), 250ml śmietanki 30% (zimnej), 1/3 szklanki cukru pudru, 1 op. cukru wanilinowego, 1 śmietanka-fix, 50g ciemnej czekolady lub dropsy czekoladowe.\nOwoce: ok. 500 g truskawek.', 'https://www.kwestiasmaku.com/przepis/tarta-truskawkowa-stracciatella'),
+(10, 'Tarta - Z Budyniem, Porzeczkami i Bezą', 30, 1000, 'Kruchy Spód: 150g mąki (pszennej lub po połowie ryżowej i ziemniaczanej w wersji bezglutenowej), 50g cukru, 90g masła (zimnego), 2 żółtka.\nBudyń: 1 budyń 60g śmietankowy ( słodzony ), 500ml mleka.\nOwoce: 500g czerwonych porzeczek, 4 łyżki mąki ziemniaczanej.\nBeza: 2 białka. 100g cukru, 1/2 łyżki mąki ziemniaczanej.', 'https://www.kwestiasmaku.com/przepis/tarta-z-budyniem-porzeczkami-i-beza'),
+(11, 'Tarta - Czekoladowa na spodzie Orzechowym z sosem Malinowym', 25, 1000, 'Spód: 70g orzechów pecan lub włoskich, 40g brązowego cukru, 20g miękkiego masła, 10g mąki (dowolnej, np. pszennej lub ryżowej).\nMasa Czekoladowa: 120g ciemnej czekolady, 150g śmietanki 30%, 50g masła, 1 żółtko.\nSos Malinowy: 500g malin, 40g cukru pudru.', 'https://www.kwestiasmaku.com/desery/czekolada/czekoladowe_desery/przepisy.html'),
+(12, 'Tarta - z Malinami i kremem Mascarpone', 20, 1000, 'Spód: 250g mąki (np. pszennej tortowej), 150g masła, schłodzonego, szczypta soli, 3 łyżki cukru, 1 jajko.\nKrem: 250g sera mascarpone, 250ml mleka zagęszczonego słodzonego (z puszki), 2 jajka oraz jedno kartonowe pudełeczko świeżych malin.', 'https://www.kwestiasmaku.com/desery/tarty/tarta_z_malinami/przepis.html'),
+(13, 'Ciasteczka - Amerykańskie z kawałkami Czekolady', 5, 100, '1 pełna szklanka (160 g) mąki pszennej, 1/3 łyżeczki soli, 1/3 łyżeczki sody oczyszczonej lub proszku do pieczenia, 2 łyżki cukru wanilinowego (lub 1 łyżeczka ekstraktu), 100g masła, 80g cukru trzcinowego, 80g cukru białego, 1 jajko, 300g czekolady (po 100 g białej, mlecznej i gorzkiej).', 'https://www.kwestiasmaku.com/desery/ciasteczka/chocolate_chip_cookies/przepis.html'),
+(14, 'Ciasteczka - Owsiane', 5, 100, '100 g masła, 1 i 1/2 szklanki płatków owsianych górskich, 3 łyżki mąki, 4 łyżki cukru, 1 łyżeczka proszku do pieczenia, 2 łyżki ziaren*, 2 jajka, opcjonalnie 1 łyżeczka miodu.', 'https://www.kwestiasmaku.com/przepis/blyskawiczne-ciasteczka-owsiane-z-ziarnami'),
+(15, 'Ciasteczka - Owsiane z Bakaliami', 7, 100, '3/4 szklanki mielonych migdałów lub zmielonych płatków migdałów, 1/2 szklanki mąki pszennej lub ryżowej, 1/2 łyżeczki sody oczyszczonej, 1 szklanka płatków owsianych, 1/2 szklanki wiórków kokosowych, ok. 80g mieszanki drobnych rodzynek i suszonej żurawiny, 125g masła lub oleju kokosowego, 3 łyżki miodu.', 'https://www.kwestiasmaku.com/desery/ciasteczka/ciasteczka_owsiane/przepis.html'),
+(16, 'Ciasteczka - Cantuccini', 6, 150, 'jajko - 2 szt, cukier trzcinowy - 150g, mąka pszenna - 250g, migdały - 100g, skórka cytryny tarta - 2 łyżki, proszek do pieczenia - 5g, sól - 1 szczypta. \nDodatkowo: mąka pszenna - 2 łyżki.', 'https://kuchnialidla.pl/wloskie-ciasteczka-cantuccini'),
+(17, 'Bułka - Przenna', 0.8, 100, 'Mąka pszenna 75%, woda, drożdże, sól, glukoza, mąka sojowa, mąka ze słodu jęczmiennego, olej rzepakowy, środek do przetwarzania mąki: kwas askorbinowy.', 'https://www.lidl.pl/p/bulka-pszenna/p99987236'),
+(18, 'Bułka - Kajzerka', 0.8, 100, 'Mąka pszenna 68%, woda; drożdże, cukier, mąka żytnia 1,5%, olej rzepakowy, sól, skrobia ziemniaczana, mąka ze słodu pszennego, mąka ze słodu jęczmiennego, środek do przetwarzania mąki: kwas askorbinowy.', 'https://www.lidl.pl/p/bulka-kajzerka/p99987235'),
+(19, 'Bułka - Ciabatta', 0.8, 100, 'Mąka Pszenna 85%, woda, sól, gluten pszenny, semolina (z pszenicy twardej), olej rzepakowy, drożdże, zakwas pszenny (mąka pszenna, woda), środek do przetwarzania mąki: kwas askorbinowy.', 'https://www.lidl.pl/p/ciabatta/p99987233'),
+(20, 'Bułka - Ziarnista', 0.8, 100, 'Mąka pszenna 49,4%, woda, mąka żytnia 15%, nasiona słonecznika 7,2%, siemię lniane złote 2%, siemię lniane 2%, drożdże, słód żytni ciemny, sól, olej rzepakowy, gluten (z pszenicy), słód pszenny jasny.', 'https://www.lidl.pl/p/bulka-pszenno-zytnia-z-nasionami/p99987244'),
+(21, 'Babeczka - Czekoladowa Biała', 9, 100, '120ml mleka, 1 łyżeczka ekstraktu z wanilii, 120g masła, 70g białej czekolady, 120g mąki, 1/2 łyżeczki proszku do pieczenia, 1/4 łyżeczki sody oczyszczonej, 120g cukru, mała szczypta soli, 1 jajko, roztrzepane.\nKrem Mascarpone: 150g sera mascarpone, 50g cukru pudru, 2 łyżki soku z cytryny. \nDekoracja: np. gotowe ozdoby, kwiaty z masy marcepanowej lub posiekane orzechy włoskie.', 'https://www.kwestiasmaku.com/desery/babka/maslane_babeczki/przepis.html'),
+(22, 'Babeczka - Czekoladowa Czarna', 7, 100, '150g masła, 150g czekolady (np. ciemnej), 300g mąki, 2 łyżeczki proszku do pieczenia, 1/2 łyżeczki sody oczyszczonej, 2 łyżki kakao, 1 łyżka kawy zbożowej lub kakao, 1 szklanka (200g) cukru, 1 łyżka cukru wanilinowego, 2 duże jajka (L), 170ml mleka.', 'https://www.kwestiasmaku.com/desery/muffiny_cupcakes/muffiny_czekoladowe/przepis.html'),
+(23, 'Babeczka - Malinowa', 5, 100, '150g masła, 1 szklanka cukru, 1/2 szklanki + 1 czubata łyżka mąki ziemniaczanej, 2 łyżeczki ekstraktu z wanilii (opcjonalnie, lub 2 łyżki cukru wanilinowego), 3 malutkie lub 2 bardzo duże jajka, 1/3 szklanki mąki pszennej, 1/2 łyżeczki proszku do pieczenia, 100g wiórków kokosowych lub zmielonych migdałów lub płatków migdałów, maliny (po 3 do jednej babeczki).', 'https://www.kwestiasmaku.com/zielony_srodek/maliny/babeczki_z_malinami/przepis.html'),
+(24, 'Babeczka - Sezonowa', 8, 100, '125g miękkiego masła, 3/4 szklanki cukru pudru lub drobnego cukru do wypieków, 1 łyżeczka ekstraktu z wanilii, 2 jajka, 1 i 1/4 szklanki mąki, 1 łyżeczka proszku do pieczenia, 1/2 szklanki mleka.\nOwoce: dowolna ilość dowolnych owoców bez pestek.\nBiała Pierzynka: 250ml śmietanki kremówki 30%, bardzo zimnej, 80g gotowych małych bez (bezików) i owoce do dekoracji.', 'https://www.kwestiasmaku.com/zielony_srodek/czeresnie/babeczki/przepis.html');
 
 -- --------------------------------------------------------
 
@@ -153,27 +153,6 @@ CREATE TABLE `promocje` (
   `SaleCode` text NOT NULL,
   `Value` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `promocje`
---
-
-INSERT INTO `promocje` (`id`, `ProductName`, `StartDate`, `EndDate`, `SaleCode`, `Value`) VALUES
-(1, 'Ciasto Sernik', '2024-06-13', '2024-06-23', 'MUqxX2kV', '30');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `relacje`
---
-
-CREATE TABLE `relacje` (
-  `id` int(11) NOT NULL,
-  `id_klijenta` text NOT NULL,
-  `id_produktu` text NOT NULL,
-  `status` text NOT NULL,
-  `data zamówienia` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 -- --------------------------------------------------------
 
@@ -222,12 +201,6 @@ ALTER TABLE `promocje`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `relacje`
---
-ALTER TABLE `relacje`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeksy dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
@@ -259,12 +232,6 @@ ALTER TABLE `produkty`
 -- AUTO_INCREMENT for table `promocje`
 --
 ALTER TABLE `promocje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `relacje`
---
-ALTER TABLE `relacje`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
