@@ -16,7 +16,7 @@ function API()
 
         $requestData = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($requestData['employeeLogin']) && $requestData['employeeLogin'] != false) {
+        if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
             $loginData = [
                 'login' => $requestData['employerLogin'],
                 'password' => $requestData['employerPassword']
