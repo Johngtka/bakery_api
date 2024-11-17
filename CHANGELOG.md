@@ -2,6 +2,13 @@
 
 ### CHANGELOG
 
+### [0.0.9](https://github.com/Johngtka/bakery_api/compare/v.0.0.8...v.0.0.9) (2024-11-17)
+
+### Features
+
+-   feat: added new login gate and process to api
+    ([#18](https://github.com/Johngtka/bakery_api/pull/18))
+
 ### [0.0.8](https://github.com/Johngtka/bakery_api/compare/v.0.0.7...v.0.0.8) (2024-09-01)
 
 ### Features
