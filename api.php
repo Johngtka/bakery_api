@@ -2,11 +2,11 @@
 
 function API()
 {
-
+    $sales = require_once('./routes/sales.php');
     $users = require_once('./routes/users.php');
     $updates = require_once('./routes/updates.php');
     $products  = require_once('./routes/products.php');
-    $sales = require_once('./routes/sales.php');
+    $employers = require_once('./routes/employers.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $users . getUsers();
@@ -15,6 +15,14 @@ function API()
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $requestData = json_decode(file_get_contents('php://input'), true);
+
+        if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
+            $loginData = [
+                'login' => $requestData['employerLogin'],
+                'password' => $requestData['employerPassword']
+            ];
+            $employers . employerLogin($loginData);
+        }
 
         if (isset($requestData['usersOrders']) && $requestData['usersOrders'] != false) {
             $userLogin = $requestData['login'];
