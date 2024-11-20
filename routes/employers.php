@@ -19,5 +19,17 @@ function employerLogin($loginData)
         $filteredResult[] = $filteredRow;
     }
 
+    $_SESSION["loggedEmployer"] = $filteredResult;
+
     echo json_encode($filteredResult);
+}
+
+function employerLogout()
+{
+    echo isset($_SESSION["loggedEmployer"]) ? "Sesja istnieje" : "Sesja nie istnieje";
+
+    if (isset($_SESSION["loggedEmployer"])) {
+        unset($_SESSION["loggedEmployer"]);
+        echo "Pracodawca wylogowany.";
+    }
 }

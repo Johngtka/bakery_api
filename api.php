@@ -24,6 +24,11 @@ function API()
             $employers . employerLogin($loginData);
         }
 
+        if (isset($requestData['empLogout']) && $requestData['empLogout'] != false) {
+
+            $employers . employerLogout();
+        }
+
         if (isset($requestData['usersOrders']) && $requestData['usersOrders'] != false) {
             $userLogin = $requestData['login'];
             $users . getUsersOrders($userLogin);
