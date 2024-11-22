@@ -30,6 +30,6 @@ function employerLogout()
 
     if (isset($_SESSION["loggedEmployer"])) {
         unset($_SESSION["loggedEmployer"]);
-        echo "Pracodawca wylogowany.";
+        echo json_encode(true);
     }
 }
