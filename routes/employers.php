@@ -26,7 +26,7 @@ function employerLogin($loginData)
 
 function employerLogout()
 {
-    echo isset($_SESSION["loggedEmployer"]) ? "Sesja istnieje" : "Sesja nie istnieje";
+    // echo isset($_SESSION["loggedEmployer"]) ? "Sesja istnieje" : "Sesja nie istnieje";
 
     if (isset($_SESSION["loggedEmployer"])) {
         unset($_SESSION["loggedEmployer"]);
