@@ -2,6 +2,13 @@
 
 ### CHANGELOG
 
+### [0.0.10](https://github.com/Johngtka/bakery_api/compare/v.0.0.9...v.0.0.10) (2024-11-24)
+
+### Features
+
+-   new logout function with some changes for logout
+    ([#19](https://github.com/Johngtka/bakery_api/pull/19))
+
 ### [0.0.9](https://github.com/Johngtka/bakery_api/compare/v.0.0.8...v.0.0.9) (2024-11-17)
 
 ### Features
