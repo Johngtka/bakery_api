@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Lis 17, 2024 at 06:39 PM
+-- Generation Time: Lis 24, 2024 at 09:10 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -90,7 +90,8 @@ CREATE TABLE `employers` (
 --
 
 INSERT INTO `employers` (`id`, `login`, `password`, `email`, `position`) VALUES
-(1, 'admin', 'admin', 'example_company@gmail.com', 'chief');
+(1, 'admin', 'admin', 'example_company@gmail.com', 'chief'),
+(2, 'gjan', 'test', 'gjan@wypiekarnia.pl', 'regular');
 
 -- --------------------------------------------------------
 
@@ -248,7 +249,7 @@ ALTER TABLE `aktualizacje`
 -- AUTO_INCREMENT for table `employers`
 --
 ALTER TABLE `employers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `klijeci`
