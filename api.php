@@ -25,8 +25,9 @@ function API()
         }
 
         if (isset($requestData['empLogout']) && $requestData['empLogout'] != false) {
+            $login = $requestData['login'];
 
-            $employers . employerLogout();
+            $employers . employerLogout($login);
         }
 
         if (isset($requestData['usersOrders']) && $requestData['usersOrders'] != false) {
