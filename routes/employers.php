@@ -19,17 +19,20 @@ function employerLogin($loginData)
         $filteredResult[] = $filteredRow;
     }
 
-    $_SESSION["loggedEmployer"] = $filteredResult;
-
-    echo json_encode($filteredResult);
+    if ($result) {
+        $employerName = $filteredResult[0]['login'];
+        $_SESSION[$employerName] = $filteredResult;
+        // echo var_dump($employerName, $_SESSION[$employerName]);
+        echo json_encode($_SESSION[$employerName]);
+    }
 }
 
-function employerLogout()
+function employerLogout($login)
 {
-    // echo isset($_SESSION["loggedEmployer"]) ? "Sesja istnieje" : "Sesja nie istnieje";
+    // echo isset($_SESSION[$login]) ? "Sesja istnieje" : "Sesja nie istnieje";
 
-    if (isset($_SESSION["loggedEmployer"])) {
-        unset($_SESSION["loggedEmployer"]);
+    if (isset($_SESSION[$login])) {
+        unset($_SESSION[$login]);
         echo json_encode(true);
     }
 }
