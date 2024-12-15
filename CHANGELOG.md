@@ -4,10 +4,10 @@
 
 ### [0.0.11](https://github.com/Johngtka/bakery_api/compare/v.0.0.10...v.0.0.11) (2024-12-15)
 
-### Fixes
+### Features
 
 -   fixes for storage logged employer session
-    ([#20](https://github.com/Johngtka/bakery_api/pull/20))
+    ([#20](https://github.com/Johngtka/bakery_api/pull/))
 
 ### [0.0.10](https://github.com/Johngtka/bakery_api/compare/v.0.0.9...v.0.0.10) (2024-11-24)
 
