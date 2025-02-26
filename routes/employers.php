@@ -24,6 +24,8 @@ function employerLogin($loginData)
         $_SESSION[$employerName] = $filteredResult;
         // echo var_dump($employerName, $_SESSION[$employerName]);
         echo json_encode($_SESSION[$employerName]);
+    } else {
+        echo json_encode(false);
     }
 }
 
