@@ -16,6 +16,10 @@ function API()
 
         $requestData = json_decode(file_get_contents('php://input'), true);
 
+        if (isset($requestData['getEmployers']) && $requestData['getEmployers'] != false) {
+            $employers . getEmployers();
+        }
+
         if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
             $loginData = [
                 'login' => $requestData['employerLogin'],
