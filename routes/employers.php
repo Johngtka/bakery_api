@@ -1,5 +1,25 @@
 <?php
 
+function getEmployers()
+{
+    global $db;
+    $query = $db->prepare("SELECT * FROM employers");
+    $query->execute();
+    $result = $query->fetchAll();
+
+    foreach ($result as $row) {
+        foreach ($row as $key => $value) {
+            if (is_numeric($key)) {
+                continue;
+            }
+            $filteredRow[$key] = $value;
+        }
+        $filteredResult[] = $filteredRow;
+    }
+
+    echo json_encode($filteredResult);
+}
+
 function employerLogin($loginData)
 {
     global $db;
