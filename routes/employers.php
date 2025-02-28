@@ -20,6 +20,19 @@ function getEmployers()
     echo json_encode($filteredResult);
 }
 
+function postEmployer($newEmployerData)
+{
+    global $db;
+    $query = $db->prepare("INSERT INTO employers VALUES (NULL, :login, :genPassword, :email, :position)");
+    $query->bindValue(":login", $newEmployerData["login"], PDO::PARAM_STR);
+    $query->bindValue(":genPassword", $newEmployerData["password"], PDO::PARAM_STR);
+    $query->bindValue(":email", $newEmployerData["email"], PDO::PARAM_STR);
+    $query->bindValue(":position", $newEmployerData["position"], PDO::PARAM_STR);
+    $query->execute();
+    $result = $query->fetchAll();
+    echo json_encode($result);
+}
+
 function employerLogin($loginData)
 {
     global $db;
