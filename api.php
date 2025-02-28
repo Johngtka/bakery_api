@@ -63,6 +63,16 @@ function API()
             $sales . getSales();
         }
 
+        if (isset($requestData['postEmployer']) && $requestData['postEmployer'] != false) {
+            $newEmployer = [
+                'login' => $requestData['login'],
+                'password' => $requestData['password'],
+                'email' => $requestData['email'],
+                'position' => $requestData['position']
+            ];
+            $employers . postEmployer($newEmployer);
+        }
+
         if (isset($requestData['postUpdate']) && $requestData['postUpdate'] != false) {
             $newUpdate = [
                 'name' => $requestData['name'],
