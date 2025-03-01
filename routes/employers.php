@@ -71,3 +71,20 @@ function employerLogout($login)
         echo json_encode(true);
     }
 }
+
+function deleteEmployer($ID)
+{
+    global $db;
+
+    $query = $db->prepare("DELETE FROM employers WHERE id = :employerID");
+    $query->bindValue(":employerID", $ID, PDO::PARAM_INT);
+    $query->execute();
+
+    $dropIdColumn = $db->prepare("ALTER TABLE employers DROP id");
+    $dropIdColumn->execute();
+
+    $addIdColumn = $db->prepare("ALTER TABLE employers ADD `id` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`)");
+    $addIdColumn->execute();
+    $result = $query->fetchAll();
+    echo json_encode($result);
+}

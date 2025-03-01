@@ -126,6 +126,11 @@ function API()
             $sales . deleteSales($deletedSale);
         }
 
+        if (isset($requestData['deleteEmployer']) && $requestData['deleteEmployer'] != false) {
+            $employerID = $requestData['id'];
+            $employers . deleteEmployer($employerID);
+        }
+
         // API Gates type: CHECK
 
         if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
