@@ -78,7 +78,7 @@ function editEmployer($employerData)
     $query = $db->prepare("UPDATE employers SET login = :login, password = :password, email = :email, position = :position WHERE id = :id");
     $query->bindValue(":id", $employerData['id'], PDO::PARAM_INT);
     $query->bindValue(":login", $employerData['nLogin'], PDO::PARAM_STR);
-    $query->bindValue(":password", $employerData['nPassword'], PDO::PARAM_STR);
+    $query->bindValue(":password", $employerData['nPass'], PDO::PARAM_STR);
     $query->bindValue(":email", $employerData['nEmail'], PDO::PARAM_STR);
     $query->bindValue(":position", $employerData['nPosition'], PDO::PARAM_STR);
     $query->execute();

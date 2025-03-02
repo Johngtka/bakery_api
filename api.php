@@ -113,10 +113,10 @@ function API()
         if (isset($requestData['editEmployer']) && $requestData['editEmployer'] != false) {
             $editedEmployer = [
                 "id" => $requestData['id'],
-                "nLogin" => $requestData['login'],
-                "nPass" => $requestData['login'],
-                "nEmail" => $requestData['login'],
-                "nPosition" => $requestData['login'],
+                "nLogin" => $requestData['nLogin'],
+                "nPass" => $requestData['nPass'],
+                "nEmail" => $requestData['nEmail'],
+                "nPosition" => $requestData['nPosition'],
             ];
             $employers . editEmployer($editedEmployer);
         }
