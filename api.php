@@ -110,6 +110,17 @@ function API()
             $products . editProduct($editedProduct);
         }
 
+        if (isset($requestData['editEmployer']) && $requestData['editEmployer'] != false) {
+            $editedEmployer = [
+                "id" => $requestData['id'],
+                "nLogin" => $requestData['login'],
+                "nPass" => $requestData['login'],
+                "nEmail" => $requestData['login'],
+                "nPosition" => $requestData['login'],
+            ];
+            $employers . editEmployer($editedEmployer);
+        }
+
         // API Gates type: DELETE
 
         if (isset($requestData['deleteProduct']) && $requestData['deleteProduct'] != false) {

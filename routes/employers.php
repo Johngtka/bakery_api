@@ -72,6 +72,20 @@ function employerLogout($login)
     }
 }
 
+function editEmployer($employerData)
+{
+    global $db;
+    $query = $db->prepare("UPDATE employers SET login = :login, password = :password, email = :email, position = :position WHERE id = :id");
+    $query->bindValue(":id", $employerData['id'], PDO::PARAM_INT);
+    $query->bindValue(":login", $employerData['nLogin'], PDO::PARAM_STR);
+    $query->bindValue(":password", $employerData['nPassword'], PDO::PARAM_STR);
+    $query->bindValue(":email", $employerData['nEmail'], PDO::PARAM_STR);
+    $query->bindValue(":position", $employerData['nPosition'], PDO::PARAM_STR);
+    $query->execute();
+    $result = $query->fetchAll();
+    echo json_encode($result);
+}
+
 function deleteEmployer($ID)
 {
     global $db;
