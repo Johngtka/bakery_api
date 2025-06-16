@@ -16,31 +16,15 @@ function API()
 
         $requestData = json_decode(file_get_contents('php://input'), true);
 
-        if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
-            $loginData = [
-                'login' => $requestData['employerLogin'],
-                'password' => $requestData['employerPassword']
-            ];
-            $employers . employerLogin($loginData);
-        }
+        // API Gates type: GET as POST
 
-        if (isset($requestData['empLogout']) && $requestData['empLogout'] != false) {
-            $login = $requestData['login'];
-
-            $employers . employerLogout($login);
+        if (isset($requestData['getEmployers']) && $requestData['getEmployers'] != false) {
+            $employers . getEmployers();
         }
 
         if (isset($requestData['usersOrders']) && $requestData['usersOrders'] != false) {
             $userLogin = $requestData['login'];
             $users . getUsersOrders($userLogin);
-        }
-
-        if (isset($requestData['orderDiscountCode']) && $requestData['orderDiscountCode'] != false) {
-            $orderDataToCheck = [
-                'code' => $requestData['code'],
-                'orderedProdName' => $requestData['prodName']
-            ];
-            $users . userOrderDiscountCodeChecker($orderDataToCheck);
         }
 
         if (isset($requestData['getUpdates']) && $requestData['getUpdates'] != false) {
@@ -57,6 +41,18 @@ function API()
 
         if (isset($requestData['getSales']) && $requestData['getSales'] != false) {
             $sales . getSales();
+        }
+
+        // API Gates type: POST
+
+        if (isset($requestData['postEmployer']) && $requestData['postEmployer'] != false) {
+            $newEmployer = [
+                'login' => $requestData['login'],
+                'password' => $requestData['password'],
+                'email' => $requestData['email'],
+                'position' => $requestData['position']
+            ];
+            $employers . postEmployer($newEmployer);
         }
 
         if (isset($requestData['postUpdate']) && $requestData['postUpdate'] != false) {
@@ -90,6 +86,8 @@ function API()
             $sales . postSales($newSale);
         }
 
+        // API Gates type: Edit
+
         if (isset($requestData['editUpdate']) && $requestData['editUpdate'] != false) {
             $editUpdate = [
                 'id' => $requestData['id'],
@@ -112,6 +110,19 @@ function API()
             $products . editProduct($editedProduct);
         }
 
+        if (isset($requestData['editEmployer']) && $requestData['editEmployer'] != false) {
+            $editedEmployer = [
+                "id" => $requestData['id'],
+                "nLogin" => $requestData['nLogin'],
+                "nPass" => $requestData['nPass'],
+                "nEmail" => $requestData['nEmail'],
+                "nPosition" => $requestData['nPosition'],
+            ];
+            $employers . editEmployer($editedEmployer);
+        }
+
+        // API Gates type: DELETE
+
         if (isset($requestData['deleteProduct']) && $requestData['deleteProduct'] != false) {
             $deletedProduct = [
                 'id' => $requestData['id']
@@ -124,6 +135,34 @@ function API()
                 'id' => $requestData['id']
             ];
             $sales . deleteSales($deletedSale);
+        }
+
+        if (isset($requestData['deleteEmployer']) && $requestData['deleteEmployer'] != false) {
+            $employerID = $requestData['id'];
+            $employers . deleteEmployer($employerID);
+        }
+
+        // API Gates type: CHECK
+
+        if (isset($requestData['empLog']) && $requestData['empLog'] != false) {
+            $loginData = [
+                'login' => $requestData['employerLogin'],
+                'password' => $requestData['employerPassword']
+            ];
+            $employers . employerLogin($loginData);
+        }
+
+        if (isset($requestData['empLogout']) && $requestData['empLogout'] != false) {
+            $login = $requestData['login'];
+            $employers . employerLogout($login);
+        }
+
+        if (isset($requestData['orderDiscountCode']) && $requestData['orderDiscountCode'] != false) {
+            $orderDataToCheck = [
+                'code' => $requestData['code'],
+                'orderedProdName' => $requestData['prodName']
+            ];
+            $users . userOrderDiscountCodeChecker($orderDataToCheck);
         }
     }
 }
