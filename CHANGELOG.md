@@ -2,6 +2,18 @@
 
 ### CHANGELOG
 
+### [0.0.12](https://github.com/Johngtka/bakery_api/compare/v.0.0.11...v.0.0.12) (2025-06-16)
+
+### Features
+
+-   new anonymous pipe for hiding employer password
+    ([#22](https://github.com/Johngtka/bakery_api/pull/22))
+
+### Fixes
+
+-   fixed detection when login data is incorrect
+    ([#21](https://github.com/Johngtka/bakery_api/pull/21))
+
 ### [0.0.11](https://github.com/Johngtka/bakery_api/compare/v.0.0.10...v.0.0.11) (2024-12-15)
 
 ### Fixes
